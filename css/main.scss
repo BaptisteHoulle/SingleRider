@@ -1,0 +1,48 @@
+/* -------------------- CHARTE GRAPHIQUE ------------ */
+
+:root {
+    --white: #FFF;
+    --black: #111;
+    --bleuclair: #20A6E0;
+    --bleu:#007ea8e0;
+    --bleufonce: #153557;
+    --jauneclair: #F9EC64;
+    --jaune:#FFE917;
+    --jaunefonce: #FFDA3F;
+}
+
+@font-face {
+    font-family: "MavenBlack";
+    font-weight: 900;
+    src: url("../font/MavenPro-Black.ttf");
+}
+
+@font-face {
+    font-family: "MavenBold";
+    font-weight: bold;
+    src: url("../font/MavenPro-Bold.ttf");
+}
+
+@font-face {
+    font-family: "MavenMedium";
+    src: url("../font/MavenPro-Medium.ttf");
+}
+
+@font-face {
+    font-family: "MavenRegular";
+    src: url("../font/MavenPro-Regular.ttf");
+}
+
+
+@import 'accueil/main_accueil.scss';
+@import 'actualites/main_actualites.scss';
+@import 'annonces/main_annonces.scss';
+@import 'connexion/main_connexion.scss';
+@import 'contact/main_contact.scss';
+@import 'cookies/main_cookies.scss';
+@import 'inscription/main_inscription.scss';
+@import 'mention/main_mention.scss';
+@import 'plan/main_plan.scss';
+@import 'politique/main_politique.scss';
+@import 'presentation/main_presentation.scss';
+@import 'profil/main_profil.scss';

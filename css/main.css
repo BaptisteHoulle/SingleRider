@@ -1,0 +1,39 @@
+/* -------------------- CHARTE GRAPHIQUE ------------ */
+:root {
+  --white: #FFF;
+  --black: #111;
+  --bleuclair: #20A6E0;
+  --bleu:#007ea8e0;
+  --bleufonce: #153557;
+  --jauneclair: #F9EC64;
+  --jaune:#FFE917;
+  --jaunefonce: #FFDA3F;
+}
+
+@font-face {
+  font-family: "MavenBlack";
+  font-weight: 900;
+  src: url("../font/MavenPro-Black.ttf");
+}
+
+@font-face {
+  font-family: "MavenBold";
+  font-weight: bold;
+  src: url("../font/MavenPro-Bold.ttf");
+}
+
+@font-face {
+  font-family: "MavenMedium";
+  src: url("../font/MavenPro-Medium.ttf");
+}
+
+@font-face {
+  font-family: "MavenRegular";
+  src: url("../font/MavenPro-Regular.ttf");
+}
+
+h1 {
+  color: var(--bleufonce);
+  font-family: "MavenBlack";
+}
+/*# sourceMappingURL=main.css.map */

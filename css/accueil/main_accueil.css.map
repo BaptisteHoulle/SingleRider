@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "main_accueil.scss",
+        "_mobile_accueil.scss",
+        "_pc_accueil.scss",
+        "_tablette_accueil.scss"
+    ],
+    "names": [],
+    "file": "main_accueil.css"
+}

@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "main_politique.scss",
+        "_mobile_politique.scss",
+        "_pc_politique.scss",
+        "_tablette_politique.scss"
+    ],
+    "names": [],
+    "file": "main_politique.css"
+}

@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "main_actualites.scss",
+        "_mobile_actualites.scss",
+        "_pc_actualites.scss",
+        "_tablette_actualites.scss"
+    ],
+    "names": [],
+    "file": "main_actualites.css"
+}
