@@ -14,7 +14,6 @@
         img{
             width: 100%;
             height: 100%;
-            position: absolute;
             border-radius: 0 0 20px 20px;
         }
 
@@ -30,9 +29,9 @@
 }
 #contenu{
     display: grid;
-    grid-template-rows: 5vh 20vh 5vh 20vh ;
-    margin-left: 10px;
-    margin-right: 10px;
+    grid-template-rows: 5vh 20vh 5vh 20vh 90vh 20vh;
+    margin-left: 30px;
+    margin-right: 30px;
 
     #information{
         display: grid;
@@ -40,10 +39,9 @@
 
         h3{
             font-family: "MavenRegular";
-            font-size: 2.3rem;
+            font-size: 2rem;
             color: var(--bleuclair);
             font-weight: lighter;
-            text-shadow: black 0px 0 1px;
             text-align: center;
         }
     }
@@ -51,13 +49,260 @@
     #titre2{
         display: grid;
         grid-row: 4;
+        text-align: center;
 
         h2{
             font-family: "MavenBold";
-            font-size: 5rem;
-            color: var(--bleufonce);
-            text-align: center;
+            font-size: 4rem;
+            color: var(--bleu);
+
+            &:after{
+                content:"";
+                display: block;
+                width : 150px;
+                background-color: var(--jaune);
+                height: 15px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 10px;
+            }
+
         }
+    }
+
+    #btn{
+        display: grid;
+        grid-row: 6;
+
+        button{
+            background-color: var(--jaunefonce);
+            width:30%;
+            height: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 30px;
+            border-color: var(--jaunefonce);
+            cursor:pointer;
+            font-family: "MavenBold";
+            color: var(--bleu);
+            font-size: 2rem;
+        }
+    }
+}
+
+footer{
+    display: grid;
+    grid-template-rows: 70vh 3vh 4vh;
+    grid-template-columns: 1fr 25% 1fr 30% 1fr 25% 1fr;
+    background-color: var(--bleufonce);
+    border-radius: 55px 55px 0 0 ;
+
+    #colonne1{
+        display: grid;
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-rows: 5% 10% 15% 15% 15% 20% 15%;
+        grid-template-columns: 1fr 25% 1fr;
+        color: white;
+
+        h2{
+            display: grid;
+            grid-row: 2;
+            grid-column: 1 / span 3;
+            color: white;
+            font-size: 2rem;
+        }
+
+        #reseaux1, #reseaux2, #reseaux3,#reseaux4, #texteReseaux {
+            margin-top: auto;
+            margin-bottom: auto;
+
+            h3{
+                font-family: "MavenRegular";
+            }
+        }
+
+        #reseaux1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 1;
+        }
+
+        #reseaux2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 1;
+        }
+
+        #reseaux3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        #reseaux4{
+            display: grid;
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+
+        #texteReseaux{
+            display: grid;
+            grid-row: 7;
+            grid-column: 1 / span 3;
+        }
+    }
+
+    #colonne2{
+        display: grid;
+        grid-column: 4;
+        grid-row: 1;
+        grid-template-rows: 5% 15% 11% 11% 11% 11% 11% 11% 11%;
+        grid-template-columns: 3fr 10% 1fr;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--jaune);
+
+        h2{
+            display: grid;
+            grid-row: 2;
+            grid-column: 1 / span 2;
+            color: white;
+            font-size: 2rem;
+        }
+
+        #page1, #page2, #page3, #page4, #page5, #page6, #page7{
+            margin-top: auto;
+            margin-bottom: auto;
+
+            h3{
+                font-family: "MavenRegular";
+            }
+        }
+
+        #page1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 1;
+
+        }
+
+        #page2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 1;
+        }
+
+        #page3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        #page4{
+            display: grid;
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        #page5{
+            display: grid;
+            grid-row: 7;
+            grid-column: 1;
+        }
+
+        #page6{
+            display: grid;
+            grid-row: 8;
+            grid-column: 1;
+        }
+
+        #page7{
+            display: grid;
+            grid-row: 9;
+            grid-column: 1;
+        }
+    }
+
+    #colonne3{
+        display: grid;
+        grid-column: 6;
+        grid-row: 1;
+        grid-template-rows: 5% 15% 25% 25% 20%;
+        grid-template-columns: 20% 1fr ;
+
+        h2{
+            display: grid;
+            grid-row: 2;
+            grid-column: 1 / span 2;
+            color: white;
+            font-size: 2rem;
+        }
+
+        #infos_site, #infos_adresse, #infos_tel{
+            margin-top: auto;
+            margin-bottom: auto;
+            color: white;
+
+            h3{
+                font-family: "MavenRegular";
+            }
+        }
+
+        #infos_tel{
+            display: grid;
+            grid-row: 3;
+            grid-column: 2;
+        }
+
+        #infos_adresse{
+            display: grid;
+            grid-row: 4;
+            grid-column: 2;
+        }
+
+        #infos_site{
+            display: grid;
+            grid-row: 5;
+            grid-column: 2;
+        }
+    }
+
+    #mentionslegales, #politique, #cookies, #plansite{
+
+
+        h3{
+            font-family: "MavenRegular";
+            font-weight: lighter;
+            color: white;
+            font-size: 15px;
+        }
+    }
+    #mentionslegales{
+        display: grid;
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    #politique{
+        display: grid;
+        grid-row: 3;
+        grid-column: 4;
+    }
+
+    #cookies{
+        display: grid;
+        grid-row: 3;
+        grid-column: 6;
+        text-align: right;
+    }
+
+    #plansite{
+        display: grid;
+        grid-column: 4;
+        grid-row: 3;
+        text-align: right;
     }
 }
 
@@ -93,7 +338,7 @@
     nav ul {
        display: flex;
        justify-content: flex-end;
-   line-height: 100px;
+    line-height: 100px;
         list-style: none;
         position: relative;
         margin-right: 10%;

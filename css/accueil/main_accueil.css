@@ -21,7 +21,6 @@
 #header #imageAccueil img {
   width: 100%;
   height: 100%;
-  position: absolute;
   border-radius: 0 0 20px 20px;
 }
 
@@ -37,10 +36,10 @@
 #contenu {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 5vh 20vh 5vh 20vh;
-      grid-template-rows: 5vh 20vh 5vh 20vh;
-  margin-left: 10px;
-  margin-right: 10px;
+  -ms-grid-rows: 5vh 20vh 5vh 20vh 90vh 20vh;
+      grid-template-rows: 5vh 20vh 5vh 20vh 90vh 20vh;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #contenu #information {
@@ -52,10 +51,9 @@
 
 #contenu #information h3 {
   font-family: "MavenRegular";
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: var(--bleuclair);
   font-weight: lighter;
-  text-shadow: black 0px 0 1px;
   text-align: center;
 }
 
@@ -64,6 +62,344 @@
   display: grid;
   -ms-grid-row: 4;
   grid-row: 4;
+  text-align: center;
+}
+
+#contenu #titre2 h2 {
+  font-family: "MavenBold";
+  font-size: 4rem;
+  color: var(--bleu);
+}
+
+#contenu #titre2 h2:after {
+  content: "";
+  display: block;
+  width: 150px;
+  background-color: var(--jaune);
+  height: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+#contenu #btn {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 6;
+  grid-row: 6;
+}
+
+#contenu #btn button {
+  background-color: var(--jaunefonce);
+  width: 30%;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  border-color: var(--jaunefonce);
+  cursor: pointer;
+  font-family: "MavenBold";
+  color: var(--bleu);
+  font-size: 2rem;
+}
+
+footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70vh 3vh 4vh;
+      grid-template-rows: 70vh 3vh 4vh;
+  -ms-grid-columns: 1fr 25% 1fr 30% 1fr 25% 1fr;
+      grid-template-columns: 1fr 25% 1fr 30% 1fr 25% 1fr;
+  background-color: var(--bleufonce);
+  border-radius: 55px 55px 0 0;
+}
+
+footer #colonne1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-rows: 5% 10% 15% 15% 15% 20% 15%;
+      grid-template-rows: 5% 10% 15% 15% 15% 20% 15%;
+  -ms-grid-columns: 1fr 25% 1fr;
+      grid-template-columns: 1fr 25% 1fr;
+  color: white;
+}
+
+footer #colonne1 h2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+  color: white;
+  font-size: 2rem;
+}
+
+footer #colonne1 #reseaux1, footer #colonne1 #reseaux2, footer #colonne1 #reseaux3, footer #colonne1 #reseaux4, footer #colonne1 #texteReseaux {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+footer #colonne1 #reseaux1 h3, footer #colonne1 #reseaux2 h3, footer #colonne1 #reseaux3 h3, footer #colonne1 #reseaux4 h3, footer #colonne1 #texteReseaux h3 {
+  font-family: "MavenRegular";
+}
+
+footer #colonne1 #reseaux1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne1 #reseaux2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne1 #reseaux3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne1 #reseaux4 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 6;
+  grid-row: 6;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne1 #texteReseaux {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 7;
+  grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+}
+
+footer #colonne2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-rows: 5% 15% 11% 11% 11% 11% 11% 11% 11%;
+      grid-template-rows: 5% 15% 11% 11% 11% 11% 11% 11% 11%;
+  -ms-grid-columns: 3fr 10% 1fr;
+      grid-template-columns: 3fr 10% 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--jaune);
+}
+
+footer #colonne2 h2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  color: white;
+  font-size: 2rem;
+}
+
+footer #colonne2 #page1, footer #colonne2 #page2, footer #colonne2 #page3, footer #colonne2 #page4, footer #colonne2 #page5, footer #colonne2 #page6, footer #colonne2 #page7 {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+footer #colonne2 #page1 h3, footer #colonne2 #page2 h3, footer #colonne2 #page3 h3, footer #colonne2 #page4 h3, footer #colonne2 #page5 h3, footer #colonne2 #page6 h3, footer #colonne2 #page7 h3 {
+  font-family: "MavenRegular";
+}
+
+footer #colonne2 #page1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne2 #page2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne2 #page3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne2 #page4 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 6;
+  grid-row: 6;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne2 #page5 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 7;
+  grid-row: 7;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne2 #page6 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 8;
+  grid-row: 8;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne2 #page7 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 9;
+  grid-row: 9;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+footer #colonne3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 6;
+  grid-column: 6;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-rows: 5% 15% 25% 25% 20%;
+      grid-template-rows: 5% 15% 25% 25% 20%;
+  -ms-grid-columns: 20% 1fr;
+      grid-template-columns: 20% 1fr;
+}
+
+footer #colonne3 h2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  color: white;
+  font-size: 2rem;
+}
+
+footer #colonne3 #infos_site, footer #colonne3 #infos_adresse, footer #colonne3 #infos_tel {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: white;
+}
+
+footer #colonne3 #infos_site h3, footer #colonne3 #infos_adresse h3, footer #colonne3 #infos_tel h3 {
+  font-family: "MavenRegular";
+}
+
+footer #colonne3 #infos_tel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+footer #colonne3 #infos_adresse {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+footer #colonne3 #infos_site {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+footer #mentionslegales h3, footer #politique h3, footer #cookies h3, footer #plansite h3 {
+  font-family: "MavenRegular";
+  font-weight: lighter;
+  color: white;
+  font-size: 15px;
+}
+
+footer #mentionslegales {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+footer #politique {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+footer #cookies {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 6;
+  grid-column: 6;
+  text-align: right;
+}
+
+footer #plansite {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  text-align: right;
 }
 
 @media (min-width: 1281px) {
