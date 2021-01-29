@@ -93,10 +93,11 @@
 footer{
     display: grid;
     grid-template-rows: 70vh 3vh 4vh;
-    grid-template-columns: 1fr 25% 1fr 30% 1fr 25% 1fr;
+    grid-template-columns: 1fr 25% 1fr 30% 1fr 30% 1fr;
     background-color: var(--bleufonce);
     border-radius: 55px 55px 0 0 ;
 
+    
     #colonne1{
         display: grid;
         grid-column: 2;
@@ -128,10 +129,37 @@ footer{
             grid-column: 1;
         }
 
+        #icon1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 3;
+        }
+        .fab {
+            border-radius: 50%;
+            background-color: var(--jauneclair);
+            width: 70px;
+            height: 70px;
+            margin: auto;
+        }
+    
+        .fa-facebook-square, .fa-twitter, .fa-instagram, .fa-youtube{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: black;
+        }
+
         #reseaux2{
             display: grid;
             grid-row: 4;
             grid-column: 1;
+        }
+
+        #icon2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 3; 
         }
 
         #reseaux3{
@@ -140,10 +168,22 @@ footer{
             grid-column: 1;
         }
 
+        #icon3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 3; 
+        }
+
         #reseaux4{
             display: grid;
             grid-row: 6;
             grid-column: 1;
+        }
+
+        #icon4{
+            display: grid;
+            grid-row: 6;
+            grid-column: 3; 
         }
 
 
@@ -229,7 +269,7 @@ footer{
         display: grid;
         grid-column: 6;
         grid-row: 1;
-        grid-template-rows: 5% 15% 25% 25% 20%;
+        grid-template-rows: 5% 15% 25% 25% 30%;
         grid-template-columns: 20% 1fr ;
 
         h2{
@@ -256,10 +296,47 @@ footer{
             grid-column: 2;
         }
 
+        #infos_telTab{
+            display: none;
+        }
+
+        #icon1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 1;
+        }
+        .fas {
+            border-radius: 50%;
+            background-color: var(--jauneclair);
+            width: 70px;
+            height: 70px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: auto;
+        }
+    
+        .fa-phone-alt, .fa-map-marker-alt, .fa-route{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: black;
+        }
+
         #infos_adresse{
             display: grid;
             grid-row: 4;
             grid-column: 2;
+        }
+
+        #infos_adresseTab{
+            display: none;
+        }
+
+        #icon2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 1;
         }
 
         #infos_site{
@@ -267,11 +344,15 @@ footer{
             grid-row: 5;
             grid-column: 2;
         }
+
+        #icon3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 1;
+        }
     }
 
     #mentionslegales, #politique, #cookies, #plansite{
-
-
         h3{
             font-family: "MavenRegular";
             font-weight: lighter;
