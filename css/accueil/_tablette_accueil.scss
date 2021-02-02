@@ -1,4 +1,5 @@
-@media (min-width:769px) and (max-width: 1280px) {
+@media (min-width:769px) and (max-width: 1280px)
+{
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
     * {
@@ -107,25 +108,19 @@
         margin-left: 40px;
     }
 
-    #header{
-        display: grid;
-        grid-template-rows: 90vh;
-    
-        #imageAccueil{
-            display: grid;
-            grid-template-rows: 50% 5vh;
-    
-            img{
-                width: 100%;
-                height: auto;
-                border-radius: 0 0 20px 20px;
-            }
+    header{
+            background-image: url("../images/image_accueil.jpg");
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 730px;
     
             #titre{
                 font-family: "MavenBold";
                 font-size: 4rem;
                 margin-left: 35%;
                 margin-top: 23%;
+
                 position: absolute;
                 color:white;
             }
@@ -490,9 +485,8 @@
         }
     }
 
-    @media all and (max-width: 1280px) {
-
-
+    @media all and (max-width: 1280px)
+    {
         nav ul {
             margin-right: 0px;
             float: left;
@@ -603,14 +597,7 @@
         text-align: center;
     }
 
-    header {
-        font-size: 35px;
-        font-weight: 600;
-        padding: 10px 0;
-    }
-
     p {
         font-size: 30px;
         font-weight: 500;
     }
-}
