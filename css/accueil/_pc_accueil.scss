@@ -3,12 +3,12 @@
     padding: 0;
 }
 
-header{
+#header_accueil{
     background-image: url("../images/image_accueil.jpg");
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
-    height: 730px;
+    height: 880px;
 
         #titre{
             font-family: "MavenBold";
@@ -20,7 +20,7 @@ header{
         }
     }
 
-#contenu{
+#contenu_accueil{
     display: grid;
     grid-template-rows: 5vh 20vh 5vh 20vh 90vh 20vh;
     margin-left: 30px;
