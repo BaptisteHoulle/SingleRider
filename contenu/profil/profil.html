@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Profil</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="file:///E:/fontawesome/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="file:///E:/jquery.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="../accueil/index.html"><img src="../../images/logo_menu.png"
+            alt="Logo de Single Rider avec un S jaune resprésentant les rails d'un coaster un un R bleu qui représente un train d'un coaster"></a>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input type="checkbox" id="btn">
+        <ul>
+            <li>
+                <label for="btn-1" class="show">Mon compte<i class="fas fa-sort-down"></i></label>
+                <a href="#">Mon compte</a>
+                <input type="checkbox" id="btn-1">
+                <ul>
+                    <li><a href="../profil/profil.html">Profil</a></li>
+                    <li><a href="#">Connexion</a></li>
+                    <li><a href="#">Inscription</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show">Les parcs<i class="fas fa-sort-down"></i></label>
+                <a href="#">Les parcs</a>
+                <input type="checkbox" id="btn-2">
+                <ul>
+                    <li><a href="#">Présentation des parcs</a></li>
+                    <li><a href="#">Actualités</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="an">Annonces</a></li>
+        </ul>
+    </nav>
+    <script>
+        $('.icon').click(function () {
+            $('span').toggleClass("cancel");
+        });
+    </script>
+    <div id="contenu_profil">
+        <div id="img_banniere">
+            <div id="img_profil"></div>
+            <div id="infos_profil">
+                <div id="prenom_infos">
+                    <h3>Baptiste</h3>
+                </div>
+                <div id="nom_infos">
+                    <h3>Houllé</h3>
+                </div>
+                <div id="btn_modifier_profil">
+                    <button onclick="window.location.href='../profil/modif_profil.html'">Modifier mon profil</button>
+                </div>
+            </div>
+            <div id="infos_bio">
+                "J'aime faire de nouvelles rencontres"
+            </div>
+        </div>
+    </div>

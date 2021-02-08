@@ -858,4 +858,110 @@ h1 {
   color: var(--bleufonce);
   font-family: "MavenBlack";
 }
+
+#contenu_profil {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 46vh 42vh;
+      grid-template-rows: 46vh 42vh;
+}
+
+#contenu_profil #img_banniere {
+  background-image: url("../images/banner.jpg");
+  background-size: 1720px 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 32vh 6vh 8vh;
+      grid-template-rows: 32vh 6vh 8vh;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+#contenu_profil #img_banniere #img_profil {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  height: 215px;
+  width: 215px;
+  border-radius: 50%;
+  background-image: url("../images/Baptiste.jpg");
+  background-size: 220px 220px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#contenu_profil #img_banniere #infos_profil {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 24.5% 1fr 24.5% 25%;
+      grid-template-columns: 25% 24.5% 1fr 24.5% 25%;
+  -ms-grid-rows: 1vh 5vh;
+      grid-template-rows: 1vh 5vh;
+}
+
+#contenu_profil #img_banniere #infos_profil #prenom_infos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  text-align: right;
+}
+
+#contenu_profil #img_banniere #infos_profil #prenom_infos h3 {
+  font-size: 25px;
+  font-family: "MavenBold";
+  color: var(--bleuclair);
+}
+
+#contenu_profil #img_banniere #infos_profil #nom_infos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  text-align: left;
+}
+
+#contenu_profil #img_banniere #infos_profil #nom_infos h3 {
+  font-size: 25px;
+  font-family: "MavenBold";
+  color: var(--bleuclair);
+}
+
+#contenu_profil #img_banniere #infos_profil #btn_modifier_profil {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+#contenu_profil #img_banniere #infos_profil #btn_modifier_profil button {
+  height: 35px;
+  width: 300px;
+  border-radius: 30px;
+  background-color: var(--bleufonce);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+}
+
+#contenu_profil #img_banniere #infos_bio {
+  display: -ms-grid;
+  display: grid;
+  color: white;
+  font-size: 22px;
+  text-align: center;
+  font-family: "MavenRegular";
+  margin-top: auto;
+  margin-bottom: auto;
+}
 /*# sourceMappingURL=main.css.map */
