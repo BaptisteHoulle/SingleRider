@@ -1,8 +1,136 @@
 #contenu_profil {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 46vh 42vh;
-      grid-template-rows: 46vh 42vh;
+  -ms-grid-rows: 47vh 44vh 50vh;
+      grid-template-rows: 47vh 44vh 50vh;
+}
+
+#contenu_profil #contenuInfos_Profil {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5% 1% 10fr 15fr 5% 1% 10fr 1fr;
+      grid-template-columns: 1fr 5% 1% 10fr 15fr 5% 1% 10fr 1fr;
+  -ms-grid-rows: 1vh 10vh 32vh;
+      grid-template-rows: 1vh 10vh 32vh;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  background-color: var(--bleufonce);
+}
+
+#contenu_profil #contenuInfos_Profil .fab, #contenu_profil #contenuInfos_Profil .fas {
+  border-radius: 50%;
+  background-color: var(--jauneclair);
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+
+#contenu_profil #contenuInfos_Profil .fa-fort-awesome, #contenu_profil #contenuInfos_Profil .fa-info-circle, #contenu_profil #contenuInfos_Profil .fa-swimmer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 35px;
+  color: black;
+}
+
+#contenu_profil #contenuInfos_Profil #logo1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#contenu_profil #contenuInfos_Profil #titre_typeParc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  font-family: "MavenRegular";
+  font-size: 25px;
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contenu_profil #contenuInfos_Profil #infos_typeParc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  color: white;
+  font-family: "MavenRegular";
+  font-size: 20px;
+}
+
+#contenu_profil #contenuInfos_Profil #logo2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+#contenu_profil #contenuInfos_Profil #infos_utilisateur {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 5;
+  grid-column: 5;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-family: "MavenRegular";
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contenu_profil #contenuInfos_Profil #logo3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 6;
+  grid-column: 6;
+}
+
+#contenu_profil #contenuInfos_Profil #titre_loisirs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 8;
+  grid-column: 8;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  font-family: "MavenRegular";
+  font-size: 25px;
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contenu_profil #contenuInfos_Profil #infos_loisir {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 8;
+  grid-column: 8;
+  font-family: "MavenRegular";
+  font-size: 20px;
+  color: white;
 }
 
 #contenu_profil #img_banniere {
@@ -12,8 +140,8 @@
   background-position: center;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 32vh 6vh 8vh;
-      grid-template-rows: 32vh 6vh 8vh;
+  -ms-grid-rows: 35vh 5vh 8vh;
+      grid-template-rows: 35vh 5vh 8vh;
   -ms-grid-row: 1;
   grid-row: 1;
 }
@@ -91,6 +219,7 @@
   text-align: center;
   color: white;
   font-size: 22px;
+  cursor: pointer;
 }
 
 #contenu_profil #img_banniere #infos_bio {
@@ -102,5 +231,158 @@
   font-family: "MavenRegular";
   margin-top: auto;
   margin-bottom: auto;
+}
+
+#contenu_modif1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 10% 25% 1fr 35% 10% 5%;
+      grid-template-columns: 5% 10% 25% 1fr 35% 10% 5%;
+  -ms-grid-rows: 6vh 30vh 6vh 6vh 6vh;
+      grid-template-rows: 6vh 30vh 6vh 6vh 6vh;
+}
+
+#contenu_modif1 #modif_imagePDP {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#contenu_modif1 #modif_imagePDP img {
+  width: 227px;
+  height: 227px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contenu_modif1 #modif_imgbanniere {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 5;
+  grid-column: 5;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+#contenu_modif1 #modif_imgbanniere img {
+  width: 535px;
+  height: 150px;
+  margin: auto;
+}
+
+#contenu_modif1 #modif_pdp {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  margin: auto;
+  font-family: "MavenBold";
+}
+
+#contenu_modif1 #modif_banniere {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 5;
+  grid-column: 5;
+  margin: auto;
+  font-family: "MavenBold";
+}
+
+#contenu_modif1 #modif_nom {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 4;
+  grid-row: 4;
+  text-align: right;
+  font-family: "MavenBold";
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contenu_modif1 #modif_prenom {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 5;
+  grid-column: 5;
+  -ms-grid-row: 4;
+  grid-row: 4;
+  text-align: left;
+  font-family: "MavenBold";
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#contenu_modif1 #modif_bio {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  text-align: left;
+  font-family: "MavenBold";
+  margin: auto;
+}
+
+#contenu_modif2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 6vh 6vh 6vh 6vh 6vh 6vh 6vh;
+      grid-template-rows: 6vh 6vh 6vh 6vh 6vh 6vh 6vh;
+  -ms-grid-columns: 5% 1fr 5%;
+      grid-template-columns: 5% 1fr 5%;
+}
+
+#contenu_modif2 #texte_bio {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#contenu_modif2 #texte_bio textarea {
+  border-radius: 30px;
+  background-color: var(--bleufonce);
+  color: white;
+  padding-left: 15px;
+  font-size: 30px;
+  font-family: "MavenBold";
+}
+
+#contenu_modif2 #titreInformations {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  font-family: "MavenBold";
+  color: var(--bleufonce);
+  font-size: 40px;
+}
+
+#contenu_modif2 #adressemail_modif {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#contenu_modif2 #adressemail_modif textarea {
+  width: 20%;
 }
 /*# sourceMappingURL=main_profil.css.map */
