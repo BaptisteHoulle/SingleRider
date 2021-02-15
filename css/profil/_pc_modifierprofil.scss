@@ -77,8 +77,8 @@
 
 #contenu_modif2{
     display: grid;
-    grid-template-rows: 6vh 6vh 6vh 6vh 6vh 6vh 6vh;
-    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 6vh 6vh 6vh 6vh 6vh 6vh 6vh 70vh 6vh 6vh 6vh 6vh 6vh 6vh 6vh 6vh 8vh 6vh 6vh 6vh;
+    grid-template-columns: 10% 1fr 10%;
 
     #texte_bio{
         display: grid;
@@ -112,5 +112,63 @@
         textarea{
             width: 20%;
         }
+    }
+
+    #datenaissance_modif{
+        display: grid;
+        grid-row: 5;
+        grid-column: 2;
+        text-align: right;
+    }
+
+    #titre_mdp{
+        display: grid;
+        grid-row: 9;
+        grid-column: 2;
+        font-family: "MavenBold";
+        color: var(--bleufonce);
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #ancienmdp_modif{
+        display: grid;
+        grid-row: 11;
+        grid-column: 2;
+        text-align: center;
+    }
+
+    #newmdp_modif{
+        display: grid;
+        grid-row: 13;
+        grid-column: 2;
+        text-align: center;
+    }
+
+    #confirmnewnmdp_modif{
+        display: grid;
+        grid-row: 15;
+        grid-column: 2;
+        text-align: center;
+    }
+
+    #deco_modif{
+        display: grid;
+        grid-row: 17;
+        grid-column: 2;
+        text-align: center;
+        font-family: "MavenBold";
+        color: var(--bleufonce);
+        font-size: 40px;
+    }
+
+    #supprcompte_modif{
+        display: grid;
+        grid-row: 19;
+        grid-column: 2;
+        text-align: center;
+        font-family: "MavenBold";
+        color: var(--bleufonce);
+        font-size: 40px;
     }
 }
