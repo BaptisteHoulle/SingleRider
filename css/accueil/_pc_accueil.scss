@@ -1,3 +1,8 @@
+@media (min-width:1240px)
+{
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -83,7 +88,7 @@
     }
 }
 
-footer{
+#footer{
     display: grid;
     grid-template-rows: 70vh 3vh 4vh;
     grid-template-columns: 1fr 25% 1fr 30% 1fr 30% 1fr;
@@ -107,7 +112,7 @@ footer{
             font-size: 2rem;
         }
 
-        #reseaux1, #reseaux2, #reseaux3,#reseaux4, #texteReseaux {
+        #reseaux1, #reseaux2, #reseaux3,#reseaux4, #texteReseaux{
             margin-top: auto;
             margin-bottom: auto;
 
@@ -289,10 +294,6 @@ footer{
             grid-column: 2;
         }
 
-        #infos_telTab{
-            display: none;
-        }
-
         #icon1{
             display: grid;
             grid-row: 3;
@@ -320,10 +321,6 @@ footer{
             display: grid;
             grid-row: 4;
             grid-column: 2;
-        }
-
-        #infos_adresseTab{
-            display: none;
         }
 
         #icon2{
@@ -597,4 +594,5 @@ footer{
         font-size: 30px;
         font-weight: 500;
     }
+}
 }
