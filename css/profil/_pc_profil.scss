@@ -183,3 +183,511 @@
         }
     }
 }
+
+footer{
+    display: grid;
+    grid-template-rows: 70vh 3vh 4vh;
+    grid-template-columns: 1fr 25% 1fr 30% 1fr 30% 1fr;
+    background-color: var(--bleufonce);
+    border-radius: 55px 55px 0 0 ;
+
+    
+    #colonne1{
+        display: grid;
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-rows: 5% 10% 15% 15% 15% 20% 15%;
+        grid-template-columns: 1fr 25% 1fr;
+        color: white;
+
+        h2{
+            display: grid;
+            grid-row: 2;
+            grid-column: 1 / span 3;
+            color: white;
+            font-size: 2rem;
+        }
+
+        #reseaux1, #reseaux2, #reseaux3,#reseaux4, #texteReseaux{
+            margin-top: auto;
+            margin-bottom: auto;
+
+            h3{
+                font-family: "MavenRegular";
+            }
+        }
+
+        #reseaux1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 1;
+        }
+
+        #icon1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 3;
+        }
+        .fab {
+            border-radius: 50%;
+            background-color: var(--jauneclair);
+            width: 70px;
+            height: 70px;
+            margin: auto;
+        }
+    
+        .fa-facebook-square, .fa-twitter, .fa-instagram, .fa-youtube{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: black;
+        }
+
+        #reseaux2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 1;
+        }
+
+        #icon2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 3; 
+        }
+
+        #reseaux3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        #icon3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 3; 
+        }
+
+        #reseaux4{
+            display: grid;
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        #icon4{
+            display: grid;
+            grid-row: 6;
+            grid-column: 3; 
+        }
+
+
+        #texteReseaux{
+            display: grid;
+            grid-row: 7;
+            grid-column: 1 / span 3;
+        }
+    }
+
+    #colonne2{
+        display: grid;
+        grid-column: 4;
+        grid-row: 1;
+        grid-template-rows: 5% 15% 11% 11% 11% 11% 11% 11% 11%;
+        grid-template-columns: 3fr 10% 1fr;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--jaune);
+
+        h2{
+            display: grid;
+            grid-row: 2;
+            grid-column: 1 / span 2;
+            color: white;
+            font-size: 2rem;
+        }
+
+        #page1, #page2, #page3, #page4, #page5, #page6, #page7{
+            margin-top: auto;
+            margin-bottom: auto;
+
+            h3{
+                font-family: "MavenRegular";
+            }
+        }
+
+        #page1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 1;
+
+        }
+
+        #page2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 1;
+        }
+
+        #page3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        #page4{
+            display: grid;
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        #page5{
+            display: grid;
+            grid-row: 7;
+            grid-column: 1;
+        }
+
+        #page6{
+            display: grid;
+            grid-row: 8;
+            grid-column: 1;
+        }
+
+        #page7{
+            display: grid;
+            grid-row: 9;
+            grid-column: 1;
+        }
+    }
+
+    #colonne3{
+        display: grid;
+        grid-column: 6;
+        grid-row: 1;
+        grid-template-rows: 5% 15% 25% 25% 30%;
+        grid-template-columns: 20% 1fr ;
+
+        h2{
+            display: grid;
+            grid-row: 2;
+            grid-column: 1 / span 2;
+            color: white;
+            font-size: 2rem;
+        }
+
+        #infos_site, #infos_adresse, #infos_tel{
+            margin-top: auto;
+            margin-bottom: auto;
+            color: white;
+
+            h3{
+                font-family: "MavenRegular";
+            }
+        }
+
+        #infos_tel{
+            display: grid;
+            grid-row: 3;
+            grid-column: 2;
+        }
+
+        #icon1{
+            display: grid;
+            grid-row: 3;
+            grid-column: 1;
+        }
+        .fas {
+            border-radius: 50%;
+            background-color: var(--jauneclair);
+            width: 70px;
+            height: 70px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: auto;
+        }
+    
+        .fa-phone-alt, .fa-map-marker-alt, .fa-route{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: black;
+        }
+
+        #infos_adresse{
+            display: grid;
+            grid-row: 4;
+            grid-column: 2;
+        }
+
+        #icon2{
+            display: grid;
+            grid-row: 4;
+            grid-column: 1;
+        }
+
+        #infos_site{
+            display: grid;
+            grid-row: 5;
+            grid-column: 2;
+        }
+
+        #icon3{
+            display: grid;
+            grid-row: 5;
+            grid-column: 1;
+        }
+    }
+
+    #mentionslegales, #politique, #cookies, #plansite{
+        h3{
+            font-family: "MavenRegular";
+            font-weight: lighter;
+            color: white;
+            font-size: 15px;
+        }
+    }
+    #mentionslegales{
+        display: grid;
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    #politique{
+        display: grid;
+        grid-row: 3;
+        grid-column: 4;
+    }
+
+    #cookies{
+        display: grid;
+        grid-row: 3;
+        grid-column: 6;
+        text-align: right;
+    }
+
+    #plansite{
+        display: grid;
+        grid-column: 4;
+        grid-row: 3;
+        text-align: right;
+    }
+}
+
+
+
+@media (min-width: 1281px) {
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+        font-family: 'MavenBold';
+    }
+
+    nav {
+        background: var(--black);
+}
+
+    nav:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    nav .logo img {
+        float: left;
+     width: 10%;
+     margin: 10px 0 10px 10%;
+    }
+
+    nav ul {
+       display: flex;
+       justify-content: flex-end;
+        line-height: 100px;
+        list-style: none;
+        position: relative;
+        margin-right: 10%;
+    }
+
+    nav ul li {
+       text-align: left;
+        display: inline-block;
+        background: var(--black);
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        color: var(--white);
+        line-height: 70px;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 50px;
+    }
+
+    nav ul li a:hover {
+        color: var(--bleuclair);
+        border-radius: 5px;
+        box-shadow: 0 0 5px var(--bleu),
+            0 0 10px var(--bleuclair);
+    }
+
+    nav ul ul li a:hover {
+        box-shadow: none;
+    }
+
+    nav ul ul {
+        position: absolute;
+        top: 120px;
+        border-top: 3px solid var(--bleuclair);
+        opacity: 0;
+        visibility: hidden;
+        transition: top .3s;
+    }
+
+    nav ul li:hover>ul {
+        top: 100px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: auto;
+        float: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--bleu);
+        text-align: center;
+    }
+
+    nav ul ul li a {
+        line-height: 50px;
+    }
+
+    nav ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 150px;
+    }
+
+    .show,
+    .icon,
+    input {
+        display: none;
+    }
+
+    .fa-plus {
+        font-size: 15px;
+        margin-left: 40px;
+    }
+
+    @media all and (max-width: 1280px) {
+        
+
+        nav .logo img {
+            width: 25%;
+            margin: 10px 0;
+        }
+
+        nav ul {
+            margin-right: 0px;
+            text-align: center;
+            width: 100% !important;
+        }
+
+        .show+a,
+        ul {
+            display: none;
+        }
+
+        nav ul li,
+        nav ul ul li {
+            display: block;
+            width: 100% !important;
+        }
+
+        nav ul li a:hover {
+            box-shadow: none;
+        }
+
+        .show {
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            padding: 0 20px;
+            line-height: 70px;
+            cursor: pointer;
+        }
+
+        .show:hover {
+            color: var(--bleuclair);
+        }
+
+        .icon {
+            display: block;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 40px;
+            line-height: 100px;
+            cursor: pointer;
+            font-size: 2em;
+        }
+
+        nav ul ul {
+            width: 100%;
+            top: 70px;
+            border-top: 0px;
+            float: none;
+            position: static;
+            display: none;
+            opacity: 1;
+            visibility: visible;
+            text-align: center;
+        }
+
+        nav ul ul a {
+            padding-left: 40px;
+        }
+
+        nav ul ul ul a {
+            padding-left: 80px;
+            
+        }
+
+        nav ul ul ul li {
+            position: static;
+        }
+
+        [id^=btn]:checked+ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            border-bottom: 0px;
+        }
+
+        span.cancel:before {
+            content: '\f00d';
+        }
+    }
+
+    .content {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    p {
+        font-size: 30px;
+        font-weight: 500;
+    }
+}

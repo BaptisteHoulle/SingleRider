@@ -1,3 +1,14 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['id_membre']) or !isset($_SESSION['nom_membre']) or !isset($_SESSION['prenom_membre']) or !isset($_SESSION['adressemail_membre']))
+	{
+		$connecte=false;
+	}
+	else
+	{
+		$connecte=true;
+	}
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -28,8 +39,8 @@
                 <input type="checkbox" id="btn-1">
                 <ul>
                     <li><a href="../profil/profil.html">Profil</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Inscription</a></li>
+                    <li><a href="../connexion/connexion.php">Connexion</a></li>
+                    <li><a href="../inscription/inscription.php">Inscription</a></li>
                 </ul>
             </li>
             <li>
@@ -68,7 +79,7 @@
                 <button onclick="window.location.href='../annonces/annonces.php'">Voir d'autres annonces</button>        
             </div>
         </div>
-        <div id="footer">
+        <footer>
             <div id="colonne1">
                 <h2>Réseaux Sociaux</h2>
                 <div id="reseaux1">
@@ -171,6 +182,6 @@
             <div id="cookies">
                 <h3>Protection sur la vie privée et cookies</h3>
             </div>
-        </div>
+        </footer>
 </body>
 </html>
