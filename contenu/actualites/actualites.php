@@ -14,7 +14,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="../accueil/index.html"><img src="../../images/logo_menu.png"
+            <a href="../accueil/index.php"><img src="../../images/logo_menu.png"
             alt="Logo de Single Rider avec un S jaune resprésentant les rails d'un coaster un un R bleu qui représente un train d'un coaster"></a>
         </div>
         <label for="btn" class="icon">
@@ -28,8 +28,8 @@
                 <input type="checkbox" id="btn-1">
                 <ul>
                     <li><a href="../profil/profil.html">Profil</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Inscription</a></li>
+                    <li><a href="../connexion/connexion.php">Connexion</a></li>
+                    <li><a href="../inscription/inscription.php">Inscription</a></li>
                 </ul>
             </li>
             <li>
@@ -37,8 +37,8 @@
                 <a href="#">Les parcs</a>
                 <input type="checkbox" id="btn-2">
                 <ul>
-                    <li><a href="#">Présentation des parcs</a></li>
-                    <li><a href="#">Actualités</a></li>
+                    <li><a href="../presentation/presentation.php">Présentation des parcs</a></li>
+                    <li><a href="../actualites/actualites.php">Actualités</a></li>
                 </ul>
             </li>
             <li><a href="#" class="an">Annonces</a></li>
@@ -50,7 +50,7 @@
         });
     </script>
         <header id="header_actualites">
-            <div id="titre">Actualités</div>
+            <center><div id="titre">Actualités</div></center>
         </header>
         <div id="contenu_actualites">
             <div id="les_actualites">
@@ -76,7 +76,6 @@
                             elles impressionnent tant le résultat est fidèle aux schémas originaux au point d’en paraitre quasi irréels. Un peu comme si un décor et un
                             environnement initialement numériques mais devenus matériels n’attendaient plus que vous pour embarquer dans des jeux vidéos grandeur nature.</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -107,7 +106,7 @@
 
 
 
-        <!--<footer>
+        <footer>
             <div id="colonne1">
                 <h2>Réseaux Sociaux</h2>
                 <div id="reseaux1">
@@ -144,25 +143,25 @@
             <div id="colonne2">
                 <h2>Explorer Single Rider</h2>
                 <div id="page1">
-                    <h3>Profil</h3>
+                    <a href="../profil/profil.php"><h3>Profil</h3></a>
                 </div>
                 <div id="page2">
-                    <h3>Inscription</h3>
+                    <a href="../inscription/inscription.php"><h3>Inscription</h3></a>
                 </div>
                 <div id="page3">
-                    <h3>Connexion</h3>
+                    <a href="../connexion/connexion.php"><h3>Connexion</h3></a>
                 </div>
                 <div id="page4">
-                    <h3>Présentation des parcs</h3>
+                    <a href="../presentation/presentation.php"><h3>Présentation des parcs</h3></a>
                 </div>
                 <div id="page5">
-                    <h3>Actualités</h3>
+                    <a href="../actualites/actualites.php"><h3>Actualités</h3></a>
                 </div>
                 <div id="page6">
-                    <h3>Annonces</h3>
+                    <a href="../annonces/annonces.php"><h3>Annonces</h3></a>
                 </div>
                 <div id="page7">
-                    <h3>Contact</h3>
+                    <a href="../contact/contact.php"><h3>Contact</h3></a>
                 </div>
             </div>
             <div id="colonne3">
@@ -193,7 +192,6 @@
                         pataterie en sortie d'autoroute puis de tourner à gauche au bout de la rue !
                     </h3>
                 </div>
-
                 <div id="icon3">
                     <i class="fas fa-route"></i>
                 </div>
@@ -210,6 +208,6 @@
             <div id="cookies">
                 <h3>Protection sur la vie privée et cookies</h3>
             </div>
-        </footer>-->
+        </footer>
 </body>
 </html>

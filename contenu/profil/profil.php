@@ -14,7 +14,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="../accueil/index.html"><img src="../../images/logo_menu.png"
+            <a href="../accueil/index.php"><img src="../../images/logo_menu.png"
             alt="Logo de Single Rider avec un S jaune resprésentant les rails d'un coaster un un R bleu qui représente un train d'un coaster"></a>
         </div>
         <label for="btn" class="icon">
@@ -28,8 +28,8 @@
                 <input type="checkbox" id="btn-1">
                 <ul>
                     <li><a href="../profil/profil.html">Profil</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Inscription</a></li>
+                    <li><a href="../connexion/connexion.php">Connexion</a></li>
+                    <li><a href="../inscription/inscription.php">Inscription</a></li>
                 </ul>
             </li>
             <li>
@@ -49,63 +49,55 @@
             $('span').toggleClass("cancel");
         });
     </script>
-        <form method="post" enctype="multipart/form-data">
-        <div id="contenu_modif1">
-            <div id="modif_imagePDP">
-                <img src="../../images/Baptiste.jpg">
+    <div id="contenu_profil">
+        <div id="img_banniere">
+            <div id="img_profil"></div>
+            <div id="infos_profil">
+                <div id="prenom_infos">
+                    <h3>Baptiste</h3>
+                </div>
+                <div id="nom_infos">
+                    <h3>Houllé</h3>
+                </div>
+                <div id="btn_modifier_profil">
+                    <button onclick="window.location.href='../profil/modifierprofil.php'">Modifier mon profil</button>
+                </div>
             </div>
-            <div id="modif_imgbanniere">
-                <img src="../../images/banner.jpg">
+            <div id="infos_bio">
+                "J'aime faire de nouvelles rencontres"
+            </div>                
+        </div>
+        <div id="contenuInfos_Profil">
+            <div id="logo1">
+                <i class="fab fa-fort-awesome"></i>
             </div>
-            <div id="modif_pdp">
-                Modifier ma photo de profil
+            <div id="titre_typeParc">
+                Mes types de parcs :
             </div>
-            <div id="modif_banniere">
-                Modifier ma bannière
+            <div id="infos_typeParc">
+                Familiale, Proche, Aquatique.
             </div>
-            <div id="modif_nom">
-                Modifier mon nom
+            <div id="logo2">
+                <i class="fas fa-info-circle"></i>
             </div>
-            <div id="modif_prenom">
-                Modifier mon prenom
+            <div id="infos_utilisateur">
+                Age : 20 ans <br><br>
+                Je suis plutôt : Discret <br><br>
+                Mes préférences : Les femmes <br><br>
+                Je suis là pour : M'amuser
             </div>
-            <div id="modif_bio">
-                Modifier ma bio
+            <div id="logo3">
+                <i class="fas fa-swimmer"></i>
+            </div>
+            <div id="titre_loisirs">
+                Mes loisirs :
+            </div>
+            <div id="infos_loisir">
+                Pêcher, faire du sport,<br><br>
+                écouter de la musique, voyager..
             </div>
         </div>
-        <div id="contenu_modif2">
-            <div id="texte_bio">
-                <textarea></textarea>
-            </div>
-            <div id="titreInformations">
-                Mes informations
-            </div>
-            <div id="adressemail_modif">
-                Adresse mail : <textarea></textarea>
-            </div>
-            <div id="datenaissance_modif">
-                Date de naissance : <input type="date">
-            </div>
-            <div id="titre_mdp">
-                Modifier son mot de passe
-            </div>
-            <div id="ancienmdp_modif">
-                Ancien mot de passe :
-            </div>
-            <div id="newmdp_modif">
-                Nouveau mot de passe :
-            </div>
-            <div id="confirmnewnmdp_modif">
-                Confirmation du nouveau mot de passe :
-            </div>
-            <div id="deco_modif">
-                Déconnexion
-            </div>
-            <div id="supprcompte_modif">
-                Supprimer le compte
-            </div>
-        </div>
-    </form>
+    </div>
     <footer>
         <div id="colonne1">
             <h2>Réseaux Sociaux</h2>
@@ -143,25 +135,25 @@
         <div id="colonne2">
             <h2>Explorer Single Rider</h2>
             <div id="page1">
-                <h3>Profil</h3>
+                <a href="../profil/profil.php"><h3>Profil</h3></a>
             </div>
             <div id="page2">
-                <h3>Inscription</h3>
+                <a href="../inscription/inscription.php"><h3>Inscription</h3></a>
             </div>
             <div id="page3">
-                <h3>Connexion</h3>
+                <a href="../connexion/connexion.php"><h3>Connexion</h3></a>
             </div>
             <div id="page4">
-                <h3>Présentation des parcs</h3>
+                <a href="../presentation/presentation.php"><h3>Présentation des parcs</h3></a>
             </div>
             <div id="page5">
-                <h3>Actualités</h3>
+                <a href="../actualites/actualites.php"><h3>Actualités</h3></a>
             </div>
             <div id="page6">
-                <h3>Annonces</h3>
+                <a href="../annonces/annonces.php"><h3>Annonces</h3></a>
             </div>
             <div id="page7">
-                <h3>Contact</h3>
+                <a href="../contact/contact.php"><h3>Contact</h3></a>
             </div>
         </div>
         <div id="colonne3">
@@ -192,7 +184,6 @@
                     pataterie en sortie d'autoroute puis de tourner à gauche au bout de la rue !
                 </h3>
             </div>
-
             <div id="icon3">
                 <i class="fas fa-route"></i>
             </div>

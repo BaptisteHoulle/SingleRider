@@ -25,7 +25,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="index.html"><img src="../../images/logo_menu.png"
+            <a href="index.php"><img src="../../images/logo_menu.png"
             alt="Logo de Single Rider avec un S jaune resprésentant les rails d'un coaster un un R bleu qui représente un train d'un coaster"></a>
         </div>
         <label for="btn" class="icon">
@@ -38,7 +38,7 @@
                 <a href="#">Mon compte</a>
                 <input type="checkbox" id="btn-1">
                 <ul>
-                    <li><a href="../profil/profil.html">Profil</a></li>
+                    <li><a href="../profil/profil.php">Profil</a></li>
                     <li><a href="../connexion/connexion.php">Connexion</a></li>
                     <li><a href="../inscription/inscription.php">Inscription</a></li>
                 </ul>
@@ -49,7 +49,7 @@
                 <input type="checkbox" id="btn-2">
                 <ul>
                     <li><a href="#">Présentation des parcs</a></li>
-                    <li><a href="../actualites/actualites.html">Actualités</a></li>
+                    <li><a href="../actualites/actualites.php">Actualités</a></li>
                 </ul>
             </li>
             <li><a href="#" class="an">Annonces</a></li>
@@ -61,7 +61,7 @@
         });
     </script>
         <header id="header_accueil">
-            <div id="titre">Single Rider</div>
+            <center><div id="titre">Single Rider</div></center>
         </header>
         <div id="contenu_accueil">
             <div id="information">
@@ -116,25 +116,25 @@
             <div id="colonne2">
                 <h2>Explorer Single Rider</h2>
                 <div id="page1">
-                    <h3>Profil</h3>
+                    <a href="../profil/profil.php"><h3>Profil</h3></a>
                 </div>
                 <div id="page2">
-                    <h3>Inscription</h3>
+                    <a href="../inscription/inscription.php"><h3>Inscription</h3></a>
                 </div>
                 <div id="page3">
-                    <h3>Connexion</h3>
+                    <a href="../connexion/connexion.php"><h3>Connexion</h3></a>
                 </div>
                 <div id="page4">
-                    <h3>Présentation des parcs</h3>
+                    <a href="../presentation/presentation.php"><h3>Présentation des parcs</h3></a>
                 </div>
                 <div id="page5">
-                    <h3>Actualités</h3>
+                    <a href="../actualites/actualites.php"><h3>Actualités</h3></a>
                 </div>
                 <div id="page6">
-                    <h3>Annonces</h3>
+                    <a href="../annonces/annonces.php"><h3>Annonces</h3></a>
                 </div>
                 <div id="page7">
-                    <h3>Contact</h3>
+                    <a href="../contact/contact.php"><h3>Contact</h3></a>
                 </div>
             </div>
             <div id="colonne3">
@@ -165,22 +165,21 @@
                         pataterie en sortie d'autoroute puis de tourner à gauche au bout de la rue !
                     </h3>
                 </div>
-
                 <div id="icon3">
                     <i class="fas fa-route"></i>
                 </div>
             </div>
             <div id="mentionslegales">
-                <h3>Mentions légales</h3>
+                <a href="../mention/mention.html"><h3>Mentions légales</h3></a>
             </div>
             <div id="politique">
-                <h3>Politique de confidentialité</h3>
+                <a href="../politique/politique.html"><h3>Politique de confidentialité</h3></a>
             </div>
             <div id="plansite">
-                <h3>Plan du site</h3>
+                <a href="../plan/plan.html"><h3>Plan du site</h3></a>
             </div>
             <div id="cookies">
-                <h3>Protection sur la vie privée et cookies</h3>
+                <a href="../cookies/cookies.html"><h3>Protection sur la vie privée et cookies</h3></a>
             </div>
         </footer>
 </body>

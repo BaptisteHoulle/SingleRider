@@ -136,7 +136,7 @@
 
 #contenu_profil #img_banniere {
   background-image: url("../images/banner.jpg");
-  background-size: 1720px 400px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: -ms-grid;
@@ -155,7 +155,7 @@
   width: 215px;
   border-radius: 50%;
   background-image: url("../images/Baptiste.jpg");
-  background-size: 220px 220px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
