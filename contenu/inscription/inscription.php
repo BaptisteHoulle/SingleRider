@@ -23,8 +23,8 @@
         <?php
             if(isset($_REQUEST['inscription']))
             {
-                include('C:\wamp64\www\GitSingleRider\bdd.php');
-                include('C:\wamp64\www\GitSingleRider\outils.php');
+                include('C:\wamp64\www\GitSingleRider\SingleRider\bdd.php');
+                include('C:\wamp64\www\GitSingleRider\SingleRider\outils.php');
 
                 $lien=mysqli_connect(SERVEUR,LOGIN,MDP,BASE);
                 $nom=nettoyage($lien,$_REQUEST['nom']);

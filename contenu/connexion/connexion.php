@@ -19,8 +19,8 @@
         <?php
           if(isset($_REQUEST['connexion']))
           {
-              include('C:\wamp64\www\GitSingleRider\bdd.php');
-              include('C:\wamp64\www\GitSingleRider\outils.php');
+              include('C:\wamp64\www\GitSingleRider\SingleRider\bdd.php');
+              include('C:\wamp64\www\GitSingleRider\SingleRider\outils.php');
 
               $lien=mysqli_connect(SERVEUR,LOGIN,MDP,BASE);
               $email=nettoyage($lien,$_REQUEST['email']);
