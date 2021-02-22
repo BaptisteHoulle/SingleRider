@@ -11,31 +11,30 @@
         <h1 id="titre">Inscription utilisateur</h1>
         <div id="form">
         <form method="post">
-            Nom : <input type="text" name="nom"><br>
-            Prénom : <input type="text" name="prenom"><br>
-            Date de naissance : <input type="date" name="date"><br>
-            Email : <input type="email" name="email"><br>
-            Mot de passe :<input type="password" name="mdp1"><br>
-            Confirmation :<input type="password" name="mdp2"><br>
-            <input type="submit" name="inscription" value="Inscription"><br>
+            Nom : <input type="text" name="nom" required=""><br>
+            Prénom : <input type="text" name="prenom" required=""><br>
+            Date de naissance : <input type="date" name="date" required=""><br>
+            Email : <input type="email" name="email" required=""><br>
+            Mot de passe :<input type="password" name="mdp1" required=""><br>
+            Confirmation :<input type="password" name="mdp2" required=""><br>
+            <input type="submit" name="inscription" value="Inscription" ><br>
         </form>
         </div>
         <?php
             if(isset($_REQUEST['inscription']))
             {
-                include('C:\wamp64\www\GitSingleRider\SingleRider\bdd.php');
-                include('C:\wamp64\www\GitSingleRider\SingleRider\outils.php');
-
-                $lien=mysqli_connect(SERVEUR,LOGIN,MDP,BASE);
-                $nom=nettoyage($lien,$_REQUEST['nom']);
-                $prenom=nettoyage($lien,$_REQUEST['prenom']);
-                $date=nettoyage($lien,$_REQUEST['date']);
-                $email=nettoyage($lien,$_REQUEST['email']);
-                $mdp1=md5($_REQUEST['mdp1']);
-                $mdp2=md5($_REQUEST['mdp2']);
-
+                include('C:\wamp64\www\codecolinephp\bdd.php');
+                include('C:\wamp64\www\codecolinephp\outils.php');
                 if($mdp1==$mdp2)
                 {
+                    $lien=mysqli_connect(SERVEUR,LOGIN,MDP,BASE);
+                    $nom=nettoyage($lien,$_REQUEST['nom']);
+                    $prenom=nettoyage($lien,$_REQUEST['prenom']);
+                    $date=nettoyage($lien,$_REQUEST['date']);
+                    $email=nettoyage($lien,$_REQUEST['email']);
+                    $mdp1=md5($_REQUEST['mdp1']);
+                    $mdp2=md5($_REQUEST['mdp2']);
+                
                     $req="SELECT * FROM membre WHERE adressemail_membre='$email'";
                     $res=mysqli_query($lien,$req);
                     if(!$res)

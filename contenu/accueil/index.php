@@ -2,12 +2,17 @@
 	session_start();
 	if(!isset($_SESSION['id_membre']) or !isset($_SESSION['nom_membre']) or !isset($_SESSION['prenom_membre']) or !isset($_SESSION['adressemail_membre']))
 	{
-		$connecte=false;
+		$connected=false;
 	}
 	else
 	{
-		$connecte=true;
+		$connected=true;
 	}
+
+     if(isset($_REQUEST['deconnexion'])){
+        echo "Ok";
+     }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -38,9 +43,14 @@
                 <a href="#">Mon compte</a>
                 <input type="checkbox" id="btn-1">
                 <ul>
-                    <li><a href="../profil/profil.php">Profil</a></li>
-                    <li><a href="../connexion/connexion.php">Connexion</a></li>
-                    <li><a href="../inscription/inscription.php">Inscription</a></li>
+                    
+                    <?php if(isset($_SESSION['id_membre'])): ?>
+                        <li><a href="../profil/profil.php">Profil</a></li>
+                        <li><a href="../deconnexion/deconnexion.php">Déconnexion</a></li>
+                    <?php else: ?>
+                        <li><a href="../connexion/connexion.php">Connexion</a></li>
+                        <li><a href="../inscription/inscription.php">Inscription</a></li>
+                    <?php endif; ?>
                 </ul>
             </li>
             <li>
@@ -49,10 +59,10 @@
                 <input type="checkbox" id="btn-2">
                 <ul>
                     <li><a href="#">Présentation des parcs</a></li>
-                    <li><a href="../actualites/actualites.php">Actualités</a></li>
+                    <li><a href="../actualites/actualites.html">Actualités</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="an">Annonces</a></li>
+            <li><a href="../annonces/annonces.php" class="an">Annonces</a></li>
         </ul>
     </nav>
     <script>
@@ -61,7 +71,7 @@
         });
     </script>
         <header id="header_accueil">
-            <center><div id="titre">Single Rider</div></center>
+            <div id="titre">Single Rider</div>
         </header>
         <div id="contenu_accueil">
             <div id="information">
@@ -88,7 +98,6 @@
                 <div id="icon1">
                     <i class="fab fa-facebook-square"></i>
                 </div>
-
                 <div id="reseaux2">
                     <h3>@SingleRider</h3>
                 </div>
@@ -107,34 +116,29 @@
                 <div id="icon4">
                     <i class="fab fa-youtube"></i>
                 </div>
-                <div id="texteReseaux">
-                    <h3>Pour nous contacter rapidement ou pour voir les différentes actualités sur les rencontres de Single Rider,
-                        les réseaux sociaux sont un atout car nous répondons rapidement !
-                    </h3>
-                </div>
             </div>
             <div id="colonne2">
                 <h2>Explorer Single Rider</h2>
                 <div id="page1">
-                    <a href="../profil/profil.php"><h3>Profil</h3></a>
+                    <h3>Profil</h3>
                 </div>
                 <div id="page2">
-                    <a href="../inscription/inscription.php"><h3>Inscription</h3></a>
+                    <h3>Inscription</h3>
                 </div>
                 <div id="page3">
-                    <a href="../connexion/connexion.php"><h3>Connexion</h3></a>
+                    <h3>Connexion</h3>
                 </div>
                 <div id="page4">
-                    <a href="../presentation/presentation.php"><h3>Présentation des parcs</h3></a>
+                    <h3>Présentation des parcs</h3>
                 </div>
                 <div id="page5">
-                    <a href="../actualites/actualites.php"><h3>Actualités</h3></a>
+                    <h3>Actualités</h3>
                 </div>
                 <div id="page6">
-                    <a href="../annonces/annonces.php"><h3>Annonces</h3></a>
+                    <h3>Annonces</h3>
                 </div>
                 <div id="page7">
-                    <a href="../contact/contact.php"><h3>Contact</h3></a>
+                    <h3>Contact</h3>
                 </div>
             </div>
             <div id="colonne3">
@@ -165,21 +169,23 @@
                         pataterie en sortie d'autoroute puis de tourner à gauche au bout de la rue !
                     </h3>
                 </div>
+
                 <div id="icon3">
                     <i class="fas fa-route"></i>
                 </div>
-            </div>
+
             <div id="mentionslegales">
-                <a href="../mention/mention.html"><h3>Mentions légales</h3></a>
+                <h3>Mentions légales</h3>
             </div>
             <div id="politique">
-                <a href="../politique/politique.html"><h3>Politique de confidentialité</h3></a>
+                <h3>Politique de confidentialité</h3>
             </div>
             <div id="plansite">
-                <a href="../plan/plan.html"><h3>Plan du site</h3></a>
+                <h3>Plan du site</h3>
             </div>
             <div id="cookies">
-                <a href="../cookies/cookies.html"><h3>Protection sur la vie privée et cookies</h3></a>
+                <h3>Protection sur la vie privée et cookies</h3>
+            </div>
             </div>
         </footer>
 </body>

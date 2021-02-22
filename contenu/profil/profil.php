@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -14,7 +18,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="../accueil/index.php"><img src="../../images/logo_menu.png"
+            <a href="index.html"><img src="../../images/logo_menu.png"
             alt="Logo de Single Rider avec un S jaune resprésentant les rails d'un coaster un un R bleu qui représente un train d'un coaster"></a>
         </div>
         <label for="btn" class="icon">
@@ -27,9 +31,14 @@
                 <a href="#">Mon compte</a>
                 <input type="checkbox" id="btn-1">
                 <ul>
-                    <li><a href="../profil/profil.html">Profil</a></li>
-                    <li><a href="../connexion/connexion.php">Connexion</a></li>
-                    <li><a href="../inscription/inscription.php">Inscription</a></li>
+                    
+                    <?php if(isset($_SESSION['id_membre'])): ?>
+                        <li><a href="../profil/profil.php">Profil</a></li>
+                        <li><a href="../deconnexion/deconnexion.php">Déconnexion</a></li>
+                    <?php else: ?>
+                        <li><a href="../connexion/connexion.php">Connexion</a></li>
+                        <li><a href="../inscription/inscription.php">Inscription</a></li>
+                    <?php endif; ?>
                 </ul>
             </li>
             <li>
@@ -38,7 +47,7 @@
                 <input type="checkbox" id="btn-2">
                 <ul>
                     <li><a href="#">Présentation des parcs</a></li>
-                    <li><a href="#">Actualités</a></li>
+                    <li><a href="../actualites/actualites.html">Actualités</a></li>
                 </ul>
             </li>
             <li><a href="#" class="an">Annonces</a></li>
@@ -54,10 +63,10 @@
             <div id="img_profil"></div>
             <div id="infos_profil">
                 <div id="prenom_infos">
-                    <h3>Baptiste</h3>
+                    <h3><?php echo $_SESSION['prenom_membre'] ?></h3>
                 </div>
                 <div id="nom_infos">
-                    <h3>Houllé</h3>
+                    <h3><?php echo $_SESSION['nom_membre'] ?></h3>
                 </div>
                 <div id="btn_modifier_profil">
                     <button onclick="window.location.href='../profil/modifierprofil.php'">Modifier mon profil</button>
@@ -77,13 +86,13 @@
             <div id="infos_typeParc">
                 Familiale, Proche, Aquatique.
             </div>
-            <div id="logo2">
+            <div id="logo2">    
                 <i class="fas fa-info-circle"></i>
             </div>
             <div id="infos_utilisateur">
-                Age : 20 ans <br><br>
+                Age: <?php echo $_SESSION['age'] ?> ans<br><br>
                 Je suis plutôt : Discret <br><br>
-                Mes préférences : Les femmes <br><br>
+                Mes préférences : Les boules <br><br>
                 Je suis là pour : M'amuser
             </div>
             <div id="logo3">
@@ -135,25 +144,25 @@
         <div id="colonne2">
             <h2>Explorer Single Rider</h2>
             <div id="page1">
-                <a href="../profil/profil.php"><h3>Profil</h3></a>
+                <h3>Profil</h3>
             </div>
             <div id="page2">
-                <a href="../inscription/inscription.php"><h3>Inscription</h3></a>
+                <h3>Inscription</h3>
             </div>
             <div id="page3">
-                <a href="../connexion/connexion.php"><h3>Connexion</h3></a>
+                <h3>Connexion</h3>
             </div>
             <div id="page4">
-                <a href="../presentation/presentation.php"><h3>Présentation des parcs</h3></a>
+                <h3>Présentation des parcs</h3>
             </div>
             <div id="page5">
-                <a href="../actualites/actualites.php"><h3>Actualités</h3></a>
+                <h3>Actualités</h3>
             </div>
             <div id="page6">
-                <a href="../annonces/annonces.php"><h3>Annonces</h3></a>
+                <h3>Annonces</h3>
             </div>
             <div id="page7">
-                <a href="../contact/contact.php"><h3>Contact</h3></a>
+                <h3>Contact</h3>
             </div>
         </div>
         <div id="colonne3">
@@ -184,6 +193,7 @@
                     pataterie en sortie d'autoroute puis de tourner à gauche au bout de la rue !
                 </h3>
             </div>
+
             <div id="icon3">
                 <i class="fas fa-route"></i>
             </div>

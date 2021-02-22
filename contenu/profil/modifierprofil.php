@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -27,7 +32,7 @@
                 <a href="#">Mon compte</a>
                 <input type="checkbox" id="btn-1">
                 <ul>
-                    <li><a href="../profil/profil.php">Profil</a></li>
+                    <li><a href="../profil/profil.html">Profil</a></li>
                     <li><a href="#">Connexion</a></li>
                     <li><a href="#">Inscription</a></li>
                 </ul>
@@ -49,7 +54,7 @@
             $('span').toggleClass("cancel");
         });
     </script>
-        <form method="post" enctype="multipart/form-data">
+        <form id="formulaire" method="post" action="#">
         <div id="contenu_modif1">
             <div id="modif_imagePDP">
                 <img src="../../images/Baptiste.jpg">
@@ -58,35 +63,51 @@
                 <img src="../../images/banner.jpg">
             </div>
             <div id="modif_pdp">
-                Modifier ma photo de profil
+                <label for="modifpdp">Modifier ma photo de profil</label><input type="file" name="image" id="modifpdp">
             </div>
             <div id="modif_banniere">
-                Modifier ma bannière
+                <label for="modifbanniere">Modifier ma bannière</label><input type="file" name="image2" id="modifbanniere">
             </div>
             <div id="modif_nom">
-                Modifier mon nom
+                <label for="modifnom">Modifier mon nom</label><input type="text" name="modifnom" id="modifnom">
             </div>
             <div id="modif_prenom">
-                Modifier mon prenom
+            <label for="modifpnom">Modifier mon prénom</label><input type="text" name="modifpnom" id="modifpnom">
             </div>
             <div id="modif_bio">
-                Modifier ma bio
-            </div>
-        </div>
-        <div id="contenu_modif2">
-            <div id="texte_bio">
-                <textarea></textarea>
+                <label for="modifbio">Modifier ma bio</label><input type="text" name="modifbio" id="modifbio" maxlength="60">
             </div>
             <div id="titreInformations">
                 Mes informations
             </div>
             <div id="adressemail_modif">
-                Adresse mail : <textarea></textarea>
+                <label for="adressemail">Adresse mail</label><input type="email" name="adressemail" id="adressemail">
             </div>
             <div id="datenaissance_modif">
-                Date de naissance : <input type="date">
+                <label for="datenaissance">Date de naissance</label><input type="date" name="datenaissance" id="datenaissance">
             </div>
-            <div id="titre_mdp">
+            <div id="sexe_modif">
+                <label id="titre_sexe">Sexe</label>
+                <input type="radio" id="choix1" name="genre" value="homme">
+                <label for="choix1">Homme</label>
+                <input type="radio" id="choix2" name="genre" value="femme">
+                <label for="choix2">Femme</label>
+            </div>
+            <div id="localisation_modif">
+                <label id="titre_localisation">Localisation</label>
+                <input type="radio" id="choix1" name="localiser" value="oui">
+                <label for="choix1">Oui</label>
+                <input type="radio" id="choix2" name="localiser" value="non">
+                <label for="choix2">Non</label>
+            </div>
+            <div id="titrePreferences">
+                Mes préférences
+            </div>
+            <div id="preferences">
+                
+            </div>
+            </form>
+            <!--<div id="titre_mdp">
                 Modifier son mot de passe
             </div>
             <div id="ancienmdp_modif">
@@ -98,14 +119,24 @@
             <div id="confirmnewnmdp_modif">
                 Confirmation du nouveau mot de passe :
             </div>
-            <div id="deco_modif">
+            <a id="deco_modif" href="../deconnexion/deconnexion.php">
                 Déconnexion
-            </div>
-            <div id="supprcompte_modif">
-                Supprimer le compte
-            </div>
+            </a>
+            <button onclick="confirmDelete()" id="supprcompte_modif">Supprimer le compte
+            </button>
+
+            <script type="text/javascript">
+                function confirmDelete(){
+                    var answer = window.confirm("Voulez-vous vraiment supprimer le compte ?");
+                    if(answer){
+                        event.preventDefault();
+                        document.location.href="../supprimer/supprimer.php";
+                    }
+                    return false;
+                }
+            </script>
         </div>
-    </form>
+
     <footer>
         <div id="colonne1">
             <h2>Réseaux Sociaux</h2>
@@ -143,25 +174,25 @@
         <div id="colonne2">
             <h2>Explorer Single Rider</h2>
             <div id="page1">
-                <a href="../profil/profil.php"><h3>Profil</h3></a>
+                <h3>Profil</h3>
             </div>
             <div id="page2">
-                <a href="../inscription/inscription.php"><h3>Inscription</h3></a>
+                <h3>Inscription</h3>
             </div>
             <div id="page3">
-                <a href="../connexion/connexion.php"><h3>Connexion</h3></a>
+                <h3>Connexion</h3>
             </div>
             <div id="page4">
-                <a href="../presentation/presentation.php"><h3>Présentation des parcs</h3></a>
+                <h3>Présentation des parcs</h3>
             </div>
             <div id="page5">
-                <a href="../actualites/actualites.php"><h3>Actualités</h3></a>
+                <h3>Actualités</h3>
             </div>
             <div id="page6">
-                <a href="../annonces/annonces.php"><h3>Annonces</h3></a>
+                <h3>Annonces</h3>
             </div>
             <div id="page7">
-                <a href="../contact/contact.php"><h3>Contact</h3></a>
+                <h3>Contact</h3>
             </div>
         </div>
         <div id="colonne3">
@@ -192,6 +223,7 @@
                     pataterie en sortie d'autoroute puis de tourner à gauche au bout de la rue !
                 </h3>
             </div>
+
             <div id="icon3">
                 <i class="fas fa-route"></i>
             </div>
@@ -208,6 +240,7 @@
         <div id="cookies">
             <h3>Protection sur la vie privée et cookies</h3>
         </div>
-    </footer>
+    </footer>            -->
+
 </body>
 </html>

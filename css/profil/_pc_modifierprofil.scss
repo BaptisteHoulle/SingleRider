@@ -1,174 +1,700 @@
-#contenu_modif1{
-    display: grid;
-    grid-template-columns: 5% 10% 25% 1fr 35% 10% 5%;
-    grid-template-rows: 6vh 30vh 6vh 6vh 6vh;
+*{
+    margin: 0;
+    padding: 0;
+}
 
-    #modif_imagePDP{
-        display: grid;
-        grid-row: 2;
-        grid-column: 3;
+@media (min-width: 1281px) {
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-        img{
-            width: 227px;
-            height: 227px;
-            border-radius: 50%;
-            margin-left: auto;
-            margin-right: auto;
+    * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+        font-family: 'MavenBold';
+    }
+
+  
+    
+    nav {
+        background: var(--black);
+    }
+
+    nav:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    nav .logo img {
+        float: left;
+     width: 10%;
+     margin: 10px 0 10px 10%;
+    }
+
+    nav ul {
+       display: flex;
+       justify-content: flex-end;
+        line-height: 100px;
+        list-style: none;
+        position: relative;
+        margin-right: 10%;
+    }
+
+    nav ul li {
+       text-align: left;
+        display: inline-block;
+        background: var(--black);
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        color: var(--white);
+        line-height: 70px;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 50px;
+    }
+
+    nav ul li a:hover {
+        color: var(--bleuclair);
+        border-radius: 5px;
+        box-shadow: 0 0 5px var(--bleu),
+            0 0 10px var(--bleuclair);
+    }
+
+    nav ul ul li a:hover {
+        box-shadow: none;
+    }
+
+    nav ul ul {
+        position: absolute;
+        top: 120px;
+        border-top: 3px solid var(--bleuclair);
+        opacity: 0;
+        visibility: hidden;
+        transition: top .3s;
+    }
+
+    nav ul li:hover>ul {
+        top: 100px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: auto;
+        float: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--bleu);
+        text-align: center;
+    }
+
+    nav ul ul li a {
+        line-height: 50px;
+    }
+
+    nav ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 150px;
+    }
+
+    .show,
+    .icon{
+        display: none;
+    }
+
+    .fa-plus {
+        font-size: 15px;
+        margin-left: 40px;
+    }
+
+    @media all and (max-width: 1280px) {
+        
+        nav .logo img {
+            width: 25%;
+            margin: 10px 0;
+        }
+
+        nav ul {
+            margin-right: 0px;
+            text-align: center;
+            width: 100% !important;
+        }
+
+        .show+a,
+        ul {
+            display: none;
+        }
+
+        nav ul li,
+        nav ul ul li {
+            display: block;
+            width: 100% !important;
+        }
+
+        nav ul li a:hover {
+            box-shadow: none;
+        }
+
+        .show {
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            padding: 0 20px;
+            line-height: 70px;
+            cursor: pointer;
+        }
+
+        .show:hover {
+            color: var(--bleuclair);
+        }
+
+        .icon {
+            display: block;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 40px;
+            line-height: 100px;
+            cursor: pointer;
+            font-size: 2em;
+        }
+
+        nav ul ul {
+            width: 100%;
+            top: 70px;
+            border-top: 0px;
+            float: none;
+            position: static;
+            display: none;
+            opacity: 1;
+            visibility: visible;
+            text-align: center;
+        }
+
+        nav ul ul a {
+            padding-left: 40px;
+        }
+
+        nav ul ul ul a {
+            padding-left: 80px;
+            
+        }
+
+        nav ul ul ul li {
+            position: static;
+        }
+
+        [id^=btn]:checked+ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            border-bottom: 0px;
+        }
+
+        span.cancel:before {
+            content: '\f00d';
         }
     }
 
-    #modif_imgbanniere{
-        display: grid;
-        grid-column: 5;
-        grid-row: 2;
-
-        img{
-            width: 535px;
-            height: 150px;
-            margin: auto;
-        }
+    .content {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 
-    #modif_pdp{
-        display: grid;
-        grid-row: 3;
-        grid-column: 3;
-        margin: auto;
-        font-family: "MavenBold";
+    p {
+        font-size: 30px;
+        font-weight: 500;
+    }
+}
+@media (min-width:769px) and (max-width: 1240px)
+{
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+        font-family: 'MavenBold';
     }
 
-    #modif_banniere{
-        display: grid;
-        grid-row: 3;
-        grid-column: 5;
-        margin: auto;
-        font-family: "MavenBold";
+    nav {
+        background: var(--black);
     }
 
-    #modif_nom{
-        display: grid;
-        grid-column: 3;
-        grid-row: 4;
-        text-align: right;
-        font-family: "MavenBold";
-        margin-top: auto;
-        margin-bottom: auto;
+    nav:after {
+        content: '';
+        clear: both;
+        display: table;
     }
 
-    #modif_prenom{
-        display: grid;
-        grid-column: 5;
-        grid-row: 4;
-        text-align: left;
-        font-family: "MavenBold";
-        margin-top: auto;
-        margin-bottom: auto;
+    nav .logo {
+        display: flex;
+        justify-content: center;
+        color: white;
     }
 
-    #modif_bio{
-        display: grid;
-        grid-column: 4;
-        grid-row: 5;
-        text-align: left;
-        font-family: "MavenBold";
-        margin: auto;
+    nav ul {
+        width: 100%;
+        text-align: center;
+        float: right;
+        margin-right: 40px;
+        list-style: none;
+        position: relative;
+    }
+
+    nav ul li {
+        background: var(--black);
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        color: var(--white);
+        line-height: 70px;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    nav ul li a:hover {
+        color: var(--bleuclair);
+        border-radius: 5px;
+        box-shadow: 0 0 5px var(--bleu),
+            0 0 10px var(--bleuclair);
+    }
+
+    nav ul ul li a:hover {
+        box-shadow: none;
+    }
+
+    nav ul ul {
+        position: absolute;
+        top: 90px;
+        border-top: 3px solid var(--bleuclair);
+        opacity: 0;
+        visibility: hidden;
+        transition: top .3s;
+    }
+
+    nav ul ul ul {
+        border-top: none;
+    }
+
+    nav ul li:hover>ul {
+        top: 70px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: 150px;
+        float: none;
+        display: list-item;
+        border-bottom: 1px solid var(--black);
+    }
+
+    nav ul ul li a {
+        line-height: 50px;
+    }
+
+    nav ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 150px;
+    }
+
+    nav .show,
+    nav .icon,
+    #btn, #btn-1, #btn-2 {
+        display: none;
+    }
+
+    .fa-plus {
+        font-size: 15px;
+        margin-left: 40px;
     }
 }
 
-#contenu_modif2{
-    display: grid;
-    grid-template-rows: 6vh 6vh 6vh 6vh 6vh 6vh 6vh 70vh 6vh 6vh 6vh 6vh 6vh 6vh 6vh 6vh 8vh 6vh 6vh 6vh;
-    grid-template-columns: 10% 1fr 10%;
+@media all and (max-width: 1280px)
+{
+    nav ul {
+        margin-right: 0px;
+        float: left;
+    }
 
-    #texte_bio{
+    nav .logo img {
+        width: 200px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .show+a,
+    ul {
+        display: none;
+    }
+
+    nav ul li,
+    nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul li a:hover {
+        box-shadow: none;
+    }
+
+  
+        .fa-sort-down {
+            color: var(--jaunefonce);
+            font-size: 2em;
+            margin-left: 20px;
+        }
+
+    .show, .an {
+        display: block;
+        color: var(--bleuclair);
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+
+    .show:hover {
+        color: var(--bleuclair);
+    }
+
+    .icon {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        line-height: 100px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    nav ul ul {
+        top: 70px;
+        border-top: 0px;
+        float: none;
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul ul a {
+        padding-left: 40px;
+    }
+
+    nav ul ul ul a {
+        padding-left: 80px;
+    }
+
+    nav ul ul ul li {
+        position: static;
+    }
+
+    [id^=btn]:checked+ul {
+        display: block;
+    }
+
+    [id^=btn]:checked .fa-sort-down {
+        display: none;
+    }
+
+    nav ul ul li {
+        border-bottom: 0px;
+    }
+
+    span.cancel:before {
+        content: '\f00d';
+    }
+}
+
+.content {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#formulaire{
+    #contenu_modif1
+    {
         display: grid;
-        grid-row: 1;
-        grid-column: 2;
+        grid-template-columns:15% 20% 1fr 15% 45% 1fr;
+        grid-template-rows: 15vh 30vh 20vh 15vh 15vh 10vh 15vh 18vh 10vh 5vh 70vh;
+    
+        #modif_imagePDP{
+            display: grid;
+            grid-row: 2;
+            grid-column: 2;
 
-        textarea{
-            border-radius: 30px;
-            background-color: var(--bleufonce);
-            color: white;
-            padding-left: 15px;
-            font-size: 30px;
+    
+            img{
+                width: 227px;
+                height: 227px;
+                border-radius: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    
+        #modif_imgbanniere{
+            display: grid;
+            grid-column: 5;
+            grid-row: 2;
+            margin: auto;
+
+            img{
+                width: 535px;
+                height: 150px;
+                margin: auto;
+            }
+        }
+    
+        #modif_pdp{
+            display: grid;
+            grid-row: 3;
+            grid-column: 1 /span 4;
+            margin: auto;
             font-family: "MavenBold";
+            text-align: center;
+
+            label{
+                font-size: 35px;
+                margin: auto;
+            }
         }
-    }
-
-    #titreInformations{
-        display: grid;
-        grid-row: 3;
-        grid-column: 2;
-        font-family: "MavenBold";
-        color: var(--bleufonce);
-        font-size: 40px;
-    }
-
-    #adressemail_modif{
-        display: grid;
-        grid-row: 5;
-        grid-column: 2;
-
-        textarea{
-            width: 20%;
+    
+        #modif_banniere{
+            display: grid;
+            grid-row: 3;
+            grid-column: 5;
+            margin: auto;
+            font-family: "MavenBold";
+                
+            label{
+                font-size: 35px;
+            }
         }
-    }
+    
+        #modif_nom{
+            display: grid;
+            grid-column: 2;
+            grid-row: 4;
+            font-family: "MavenBold";
 
-    #datenaissance_modif{
-        display: grid;
-        grid-row: 5;
-        grid-column: 2;
-        text-align: right;
-    }
+            label{
+                font-size: 30px;
+                margin-right: auto;
+                margin-left: auto;
+            }
 
-    #titre_mdp{
-        display: grid;
-        grid-row: 9;
-        grid-column: 2;
-        font-family: "MavenBold";
-        color: var(--bleufonce);
-        font-size: 40px;
-        text-align: center;
-    }
+            input[type=text]{
+                width: 70%;
+                height: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    
+        #modif_prenom{
+            display: grid;
+            grid-column: 5;
+            grid-row: 4;
 
-    #ancienmdp_modif{
-        display: grid;
-        grid-row: 11;
-        grid-column: 2;
-        text-align: center;
-    }
+            font-family: "MavenBold";
 
-    #newmdp_modif{
-        display: grid;
-        grid-row: 13;
-        grid-column: 2;
-        text-align: center;
-    }
+            label{
+                font-size: 30px;
+                margin-right: auto;
+                margin-left: auto;
+            }
 
-    #confirmnewnmdp_modif{
-        display: grid;
-        grid-row: 15;
-        grid-column: 2;
-        text-align: center;
-    }
+            input[type=text]{
+                width: 40%;
+                height: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    
+        #modif_bio{
+            display: grid;
+            grid-column: 1 /span 5;
+            grid-row: 5;
+            font-family: "MavenBold";
 
-    #deco_modif{
-        display: grid;
-        grid-row: 17;
-        grid-column: 2;
-        text-align: center;
-        font-family: "MavenBold";
-        color: var(--bleufonce);
-        font-size: 40px;
-    }
+            label{
+                font-size: 30px;
+                margin-right: auto;
+                margin-left: auto;
+            }
 
-    #supprcompte_modif{
-        display: grid;
-        grid-row: 19;
-        grid-column: 2;
-        text-align: center;
-        font-family: "MavenBold";
-        color: var(--bleufonce);
-        font-size: 40px;
-    }
+            input[type=text]{
+                width: 40%;
+                height: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        #titreInformations{
+            display: grid;
+            grid-row: 6;
+            grid-column: 2/span 5;
+            font-family: "MavenBold";
+            color: var(--bleufonce);
+
+            font-size: 40px;
+        }
+    
+        #adressemail_modif{
+            display: grid;
+            grid-row: 7;
+            grid-column: 2;
+            font-size: 30px;
+    
+            input[type=email]{
+                width: 70%;
+                height: 50%;
+            }
+        }
+    
+        #datenaissance_modif{
+            display: grid;
+            grid-row: 7;
+            grid-column: 5;
+            margin-right: auto;
+            font-size: 30px;
+
+
+            input[type=date]{
+                width: 90%;
+                height: 50%;
+                margin-right: auto;
+                font-size: 25px;
+            }
+        }
+
+        #sexe_modif{
+            display: grid;
+            grid-column: 2;
+            grid-row: 8;
+
+
+            #titre_sexe{
+                font-size: 30px; 
+            }
+        }
+
+        #localisation_modif{
+            display: grid;
+            grid-column: 5;
+            grid-row: 8;
+
+            #titre_localisation{
+                font-size: 30px;
+            }
+        }
+
+        #titrePreferences{
+            display: grid;
+            grid-column: 2 / span 3;
+            grid-row: 9;
+            margin-top: auto;
+            font-family: "MavenBold";
+            color: var(--bleufonce);
+            font-size: 40px;
+        }
+
+        #preferences{
+            display: grid;
+            grid-row: 11;
+            grid-column: 2 /span 4;
+            width: 80%;
+            height: 80%;
+            background-color: var(--bleufonce);
+            border-radius: 30px;
+        }
+    /*
+        #titre_mdp{
+            display: grid;
+            grid-row: 9;
+            grid-column: 2;
+            font-family: "MavenBold";
+            color: var(--bleufonce);
+            font-size: 40px;
+            text-align: center;
+        }
+    
+        #ancienmdp_modif{
+            display: grid;
+            grid-row: 11;
+            grid-column: 2;
+            text-align: center;
+        }
+    
+        #newmdp_modif{
+            display: grid;
+            grid-row: 13;
+            grid-column: 2;
+            text-align: center;
+        }
+    
+        #confirmnewnmdp_modif{
+            display: grid;
+            grid-row: 15;
+            grid-column: 2;
+            text-align: center;
+        }/*
+    
+        #deco_modif{
+            display: grid;
+            grid-row: 17;
+            grid-column: 2;
+            text-align: center;
+            font-family: "MavenBold";
+            color: var(--bleufonce);
+            font-size: 40px;
+        }
+    
+        #supprcompte_modif{
+            display: grid;
+            grid-row: 19;
+            grid-column: 2;
+            text-align: center;
+            font-family: "MavenBold";
+            color: var(--bleufonce);
+            font-size: 40px;
+        }
+    }*/
+}
 }

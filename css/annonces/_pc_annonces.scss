@@ -1,0 +1,308 @@
+@media (min-width: 1281px) {
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'MavenBold';
+    }
+
+    nav {
+        background: var(--black);
+        position: fixed;
+        width: 100%;
+        z-index: 1111111111;
+    }
+
+    nav:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    nav .logo img {
+        float: left;
+        width: 10%;
+        margin: 10px 0 10px 10%;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        line-height: 100px;
+        list-style: none;
+        position: relative;
+        margin-right: 10%;
+    }
+
+    nav ul li {
+        text-align: left;
+        display: inline-block;
+        background: var(--black);
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        color: var(--white);
+        line-height: 70px;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 50px;
+    }
+
+    nav ul li a:hover {
+        color: var(--bleuclair);
+        border-radius: 5px;
+        box-shadow: 0 0 5px var(--bleu),
+            0 0 10px var(--bleuclair);
+    }
+
+    nav ul ul li a:hover {
+        box-shadow: none;
+    }
+
+    nav ul ul {
+        position: absolute;
+        top: 120px;
+        border-top: 3px solid var(--bleuclair);
+        opacity: 0;
+        visibility: hidden;
+        transition: top .3s;
+    }
+
+    nav ul li:hover>ul {
+        top: 100px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul ul li {
+        position: relative;
+        margin: 0px;
+        width: auto;
+        float: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--bleu);
+        text-align: center;
+    }
+
+    nav ul ul li a {
+        line-height: 50px;
+    }
+
+    nav ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 150px;
+    }
+
+    nav .show,
+    nav .icon,
+    #btn, #btn-1, #btn-2 {
+        display: none;
+    }
+
+    .fa-plus {
+        font-size: 15px;
+        margin-left: 40px;
+    }
+
+    @media all and (max-width: 1280px) {
+
+
+        nav .logo img {
+            width: 25%;
+            margin: 10px 0;
+        }
+
+        nav ul {
+            margin-right: 0px;
+            text-align: center;
+            width: 100% !important;
+        }
+
+        .show+a,
+        ul {
+            display: none;
+        }
+
+        nav ul li,
+        nav ul ul li {
+            display: block;
+            width: 100% !important;
+        }
+
+        nav ul li a:hover {
+            box-shadow: none;
+        }
+
+        .show {
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            padding: 0 20px;
+            line-height: 70px;
+            cursor: pointer;
+        }
+
+        .show:hover {
+            color: var(--bleuclair);
+        }
+
+        .icon {
+            display: block;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 40px;
+            line-height: 100px;
+            cursor: pointer;
+            font-size: 2em;
+        }
+
+        nav ul ul {
+            width: 100%;
+            top: 70px;
+            border-top: 0px;
+            float: none;
+            position: static;
+            display: none;
+            opacity: 1;
+            visibility: visible;
+            text-align: center;
+        }
+
+        nav ul ul a {
+            padding-left: 40px;
+        }
+
+        nav ul ul ul a {
+            padding-left: 80px;
+
+        }
+
+        nav ul ul ul li {
+            position: static;
+        }
+
+        [id^=btn]:checked+ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            border-bottom: 0px;
+        }
+
+        span.cancel:before {
+            content: '\f00d';
+        }
+    }
+
+    main {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    #headerannonce {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-image: url("../images/presentation/toverland.jpg");
+        background-size: cover;
+
+
+        h1 {
+            height: 100vh;
+            display: flex;
+            font-size: 6rem;
+            color: var(--white);
+            text-shadow: 1px 1px 1px var(--black);
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+    .contentannonce {
+        width: 60%;
+        margin: 5% 20%;
+
+        .annonce {
+            width: 100%;
+            border-radius: 50px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, .5);
+
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+
+            .annoncepresent {
+                display: flex;
+                align-items: center;
+                background-color: var(--bleuclair);
+                padding: 0.5em 0 0.5em 2em;
+                width: 70%;
+                border-radius: 50px;
+                -webkit-border-radius: 50px;
+                -moz-border-radius: 50px;
+                -ms-border-radius: 50px;
+                -o-border-radius: 50px;
+
+                img {
+                    width: 6rem;
+                    height: 6rem;
+                    border-radius: 100%;
+                    -webkit-border-radius: 100%;
+                    -moz-border-radius: 100%;
+                    -ms-border-radius: 100%;
+                    -o-border-radius: 100%;
+                }
+
+                p {
+                    font-size: 3em;
+                    margin-left: 2em;
+                    font-family: 'MavenRegular';
+                    color: var(--white);
+                }
+            }
+
+            .annoncedescri {
+                width: 90%;
+
+
+                p {
+                    overflow: hidden;
+                    margin: 1em 5% 1em 5%;
+                    font-family: 'MavenRegular';
+                }
+             
+                    .imgdescri {
+                        width: 90%;
+                        height: 400px;
+                        margin: 0 auto;                
+                        background-position: center;
+                        background-size: cover;
+                   
+                }
+            }
+
+            .likecom {
+                width: 90%;
+              margin: 5% auto 5% auto;   
+
+              i {
+                  font-size: 2em;
+              }
+            }
+        }
+
+    }
+
+}
