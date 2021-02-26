@@ -448,8 +448,8 @@ p {
     #contenu_modif1
     {
         display: grid;
-        grid-template-columns:15% 20% 1fr 15% 45% 1fr;
-        grid-template-rows: 15vh 30vh 20vh 15vh 15vh 10vh 15vh 18vh 10vh 5vh 70vh;
+        grid-template-columns:15% 20% 1fr 15% 47% 1fr;
+        grid-template-rows: 15vh 30vh 20vh 15vh 15vh 10vh 15vh 18vh 10vh 5vh 80vh;
     
         #modif_imagePDP{
             display: grid;
@@ -572,7 +572,6 @@ p {
             grid-column: 2/span 5;
             font-family: "MavenBold";
             color: var(--bleufonce);
-
             font-size: 40px;
         }
     
@@ -609,6 +608,15 @@ p {
             grid-column: 2;
             grid-row: 8;
 
+            .radiobutton{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+
+                label{
+                    margin-left: 4%;
+                }
+            }
 
             #titre_sexe{
                 font-size: 30px; 
@@ -619,6 +627,16 @@ p {
             display: grid;
             grid-column: 5;
             grid-row: 8;
+
+            .radiobutton{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                
+                label{
+                    margin-left: 3%;
+                }
+            }
 
             #titre_localisation{
                 font-size: 30px;
@@ -637,64 +655,366 @@ p {
 
         #preferences{
             display: grid;
+            grid-template-columns: 2% 10% 40% 3% 10% 1fr 5%;
+            grid-template-rows: 12% 1fr 12% 1fr 12% 1fr 10vh;
             grid-row: 11;
-            grid-column: 2 /span 4;
+            grid-column: 1 /span 6;
+            padding-top: 20px;
             width: 80%;
+            margin-left: auto;
+            margin-right: auto;
             height: 80%;
             background-color: var(--bleufonce);
             border-radius: 30px;
+            color: white;
+
+            #btn_enregistrer_modif{
+                display: grid;
+                grid-column: 1 / span 7;
+                grid-row: 7;
+
+                input[type=submit]{
+                    width: 30%;
+                    height: 45%;
+                    margin: auto;
+                    font-size: 25px;
+                    border-radius: 30px;
+                    background-color: var(--bleuclair);
+                    color: white;
+                }
+            }
+
+            #titre_discussion{
+                display: grid;
+                grid-column: 3;
+                grid-row: 1;
+
+                h2{
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-family: "MavenRegular";
+                }
+            }
+
+            .fab, .fas{
+                border-radius: 50%;
+                background-color: var(--jauneclair);
+                width: 40px;
+                height: 40px;
+                margin-left: auto;
+                margin-top: auto;
+                margin-right: auto;
+                margin-bottom: auto;
+            }
+        
+            .fa-discourse, .fa-heart, .fa-search, .fa-fort-awesome-alt, .fa-running{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 25px;
+                color: black;
+            }
+
+            #discussion_modif{
+                display: grid;
+                grid-row: 2;
+                grid-column: 3;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -1em;
+                align-items: center;
+                label{
+                    font-size: 1.1em;
+                    width: 35%;
+                }
+                input[type=radio]{
+                    width: 15%;
+                }
+            }
+
+            #icon1_pref{
+                display: grid;
+                grid-column: 2;
+                grid-row: 1;
+            }
+            
+            #titre_preference{
+                display: grid;
+                grid-column: 3;
+                grid-row: 3;
+
+                h2{
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-family: "MavenRegular";
+                }
+            }
+
+            #icon2_pref{
+                display: grid;
+                grid-row: 3;
+                grid-column: 2;
+            }
+
+            #preferences_modif{
+                display: grid;
+                grid-column: 3;
+                grid-row: 4;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -1em;
+                align-items: center;
+                label{
+                    font-size: 1.1em;
+                    width: 35%;
+                }
+                input[type=checkbox]{
+                    width: 15%;
+                }
+            }
+
+            #titre_typerecherche{
+                display: grid;
+                grid-column: 3;
+                grid-row: 5;
+
+                h2{
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-family: "MavenRegular";
+                }
+            }
+
+            #recherche_modif{
+                display: grid;
+                grid-row: 6;
+                grid-column: 3;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -1em;
+                align-items: center;
+
+                label{
+                    font-size: 1.1em;
+                    width: 35%;
+                }
+                input[type=checkbox]{
+                    width: 15%;
+                }
+            }
+
+            #icon3_pref{
+                display: grid;
+                grid-column: 2;
+                grid-row: 5;
+            }
+
+            #titre_typeparc{
+                display: grid;
+                grid-column: 6;
+                grid-row: 1;
+
+                h2{
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-family: "MavenRegular";
+                }
+            }
+
+            #icon4_pref{
+                display: grid;
+                grid-column: 5;
+                grid-row: 1;
+            }
+
+            #parc_modif{
+                display: grid;
+                grid-row: 2;
+                grid-column: 6;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -1em;
+                align-items: center;
+                label{
+                    font-size: 1.1em;
+                    width: 35%;
+                }
+                input[type=checkbox]{
+                    width: 15%;
+                }
+            }
+
+            #titre_loisir{
+                display: grid;
+                grid-row: 3;
+                grid-column: 6;
+
+                h2{
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-family: "MavenRegular";
+                }
+            }
+
+            #icon5_pref{
+                display: grid;
+                grid-column: 5;
+                grid-row: 3;
+            }
+            
+            #texte_loisir{
+                display: grid;
+                grid-column: 6;
+                grid-row: 4 / span 3;
+
+                textarea::placeholder{
+                    color: var(--bleuclair);
+                    font-size: 15px;
+                    font-family: "MavenRegular";
+                }
+                textarea{
+                    color: var(--bleuclair);
+                    font-size: 15px;
+                    font-family: "MavenRegular";
+                }
+            }
         }
-    /*
-        #titre_mdp{
+    }
+}
+#formulaire2{
+    #contenu_modif2{
+        display: grid;
+        grid-template-columns: 1fr 40% 1fr;
+        grid-template-rows: 3vh 10vh 10vh 5vh 10vh 5vh 10vh 5vh 10vh 3vh ;
+
+        #titremodifiermdp{
+            display: grid;
+            grid-column: 2;
+            grid-row: 2;
+            font-family: "MavenBold";
+            color: var(--bleufonce);
+            font-size: 40px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        
+        #ancienmdp_modif{
+            display: grid;
+            grid-row:3;
+            grid-column: 2;
+            text-align: center;
+            font-size: 20px;
+
+            input[type=text]{
+                width: 45%;
+                height: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        #newmdp_modif{
+            display: grid;
+            grid-row: 5;
+            grid-column: 2;
+            text-align: center;
+            font-size: 20px;
+
+            input[type=text]{
+                width: 45%;
+                height: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        #confirmnewnmdp_modif{
+            display: grid;
+            grid-row: 7;
+            grid-column: 2;
+            text-align: center;
+            font-size: 20px;
+
+            input[type=text]{
+                width: 45%;
+                height: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        #btn_mdp_modif{
             display: grid;
             grid-row: 9;
             grid-column: 2;
-            font-family: "MavenBold";
-            color: var(--bleufonce);
-            font-size: 40px;
             text-align: center;
+
+            input[type=submit]{
+                width: 50%;
+                height: 45%;
+                margin: auto;
+                font-size: 20px;
+                border-radius: 30px;
+                background-color: var(--bleuclair);
+                color: white;
+            }
         }
-    
-        #ancienmdp_modif{
-            display: grid;
-            grid-row: 11;
-            grid-column: 2;
-            text-align: center;
-        }
-    
-        #newmdp_modif{
-            display: grid;
-            grid-row: 13;
-            grid-column: 2;
-            text-align: center;
-        }
-    
-        #confirmnewnmdp_modif{
-            display: grid;
-            grid-row: 15;
-            grid-column: 2;
-            text-align: center;
-        }/*
-    
-        #deco_modif{
-            display: grid;
-            grid-row: 17;
-            grid-column: 2;
-            text-align: center;
-            font-family: "MavenBold";
-            color: var(--bleufonce);
-            font-size: 40px;
-        }
-    
-        #supprcompte_modif{
-            display: grid;
-            grid-row: 19;
-            grid-column: 2;
-            text-align: center;
-            font-family: "MavenBold";
-            color: var(--bleufonce);
-            font-size: 40px;
-        }
-    }*/
+    }
 }
+
+#deco_supp{
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    grid-template-rows:10vh 10vh 10vh 5vh ;
+
+    #deconnexion_modif{
+        display: grid;
+        grid-column: 2;
+        grid-row: 2;
+        text-align: center;
+        font-family: "MavenBold";
+        color: var(--bleufonce);
+        font-size: 40px;
+
+        a:visited{
+            color:var(--bleufonce);
+            text-decoration: none;
+
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        a:link{
+            color:var(--bleufonce);
+            text-decoration: none;
+        }
+    }
+    
+    #supprimer_modif{
+        display: grid;
+        grid-column: 2;
+        grid-row: 3;
+        text-align: center;
+        font-family: "MavenBold";
+        color: var(--bleufonce);
+        font-size: 40px;
+    
+        button{
+            width: 50%;
+            height: 45%;
+            margin: auto;
+            font-size: 20px;
+            border-radius: 30px;
+            background-color: var(--bleuclair);
+            color: white;
+        }
+    }
+}
+
+hr{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
 }
