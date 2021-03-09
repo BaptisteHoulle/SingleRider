@@ -768,7 +768,7 @@ p {
                     font-size: 1.1em;
                     width: 35%;
                 }
-                input[type=checkbox]{
+                input[type=radio]{
                     width: 15%;
                 }
             }
@@ -866,17 +866,6 @@ p {
                 display: grid;
                 grid-column: 6;
                 grid-row: 4 / span 3;
-
-                textarea::placeholder{
-                    color: var(--bleuclair);
-                    font-size: 15px;
-                    font-family: "MavenRegular";
-                }
-                textarea{
-                    color: var(--bleuclair);
-                    font-size: 15px;
-                    font-family: "MavenRegular";
-                }
             }
         }
     }

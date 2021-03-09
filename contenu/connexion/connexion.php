@@ -28,6 +28,7 @@
 
               $req="SELECT * FROM membre WHERE adressemail_membre='$email' AND mdp_membre='$mdp'";
               $res=mysqli_query($lien,$req);
+
               if(!$res)
               {
                   echo "Erreur SQL: $req<br>".mysqli_error($lien);
@@ -39,6 +40,7 @@
 
                   if($nb==1)
                   {
+                    
                     session_start();
                     $_SESSION['id_membre']=$tableau['id_membre'];
                     $_SESSION['nom_membre']=$tableau['nom_membre'];
@@ -46,10 +48,14 @@
                     $_SESSION['adressemail_membre']=$tableau['adressemail_membre'];
                     $_SESSION['admin_membre']=$tableau['admin_membre'];
                     $_SESSION['age'] = floor((abs(date('Y-m-j') - strtotime($tableau['datenaissance_membre']))) / (365*60*60*24));
-                    //$test = abs(date('Y-m-j') - strtotime($tableau['datenaissance_membre']));
-                    //$years = floor((abs(date('Y-m-j') - strtotime($tableau['datenaissance_membre']))) / (365*60*60*24));
-                    //$interval = date_diff(date('Y-m-j'), strtotime($tableau['datenaissance_membre']));
-                    
+                    $_SESSION['datenaissance_membre']= $tableau['datenaissance_membre'];
+                    $_SESSION['bio_membre']=$tableau['bio_membre'];
+                    if($tableau['sexe_membre']== "0"){
+                      $_SESSION['sexe_membre']='Homme';
+                    }
+                    else{
+                      $_SESSION['sexe_membre']='Femme';
+                    }                    
                     mysqli_close($lien);
                    header("Location: ../accueil/index.php");                    
                   }

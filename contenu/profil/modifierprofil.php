@@ -1,5 +1,161 @@
 <?php
+//Start session
+session_start();
+include('C:\wamp64\www\codecolinephp\bdd.php');
+include('C:\wamp64\www\codecolinephp\outils.php');
 
+//Retrieve user ID
+$id = $_SESSION['id_membre'];
+
+//Create SQL Link
+$lien=mysqli_connect(SERVEUR,LOGIN,MDP,BASE);
+
+//Get user preference info
+$req2="SELECT * FROM preference WHERE id_membre='$id'";
+$res2=mysqli_query($lien,$req2);
+
+//If no info
+if(!$res2){
+    echo "Erreur SQL: $req<br>".mysqli_error($lien);
+    $_SESSION['discussion']="";
+    $_SESSION['sexPref']="";
+    $_SESSION['researchType']="";
+    $_SESSION['parkType']=array("");
+    $_SESSION['hobbies']="";
+}
+//If Info
+else{
+    $tableau=mysqli_fetch_array($res2);
+
+    //Push to session param
+    $_SESSION['discussion']=$tableau['discussion_preference'];
+    $_SESSION['sexPref']=$tableau['preferencesexe_preference'];
+    $_SESSION['researchType']=$tableau['typerecherche_preference'];
+    $parkT = "bonjour".$tableau['typeparc_preference'];
+    $park = array("");
+    if(strpos($parkT,'grosses')){
+        array_push($park, "grosses");
+    }
+    if(strpos($parkT,'sensation')){
+        array_push($park, "sensation");
+    }
+    if(strpos($parkT,'thematise')){
+        array_push($park, "thematise");
+    }
+    if(strpos($parkT,'proche')){
+        array_push($park, "proche");
+    }
+    if(strpos($parkT,'aquatique')){
+        array_push($park, "aquatique");
+    }
+    if(strpos($parkT,'familiale')){
+        array_push($park, "familiale");
+    }
+    $_SESSION['parkType']=$park;
+    $_SESSION['hobbies']=$tableau['loisir_preference'];
+}
+
+//Modify profil when post is called
+function modifyProfile($id, $lien, $nom, $prenom, $bio, $adressemail, $datenaissance, $genre, $discussion, $sexPref, $researchType, $parkType, $hobbies){
+
+    
+    if($genre =="homme"){
+        $sexe = 0;
+    }
+    else{
+        $sexe = 1;
+    }
+    if(!empty($parkType)){
+        $N = count($parkType);
+        $parktype='';
+        for($i=0; $i < $N; $i++)
+        {
+          $parktype .= $parkType[$i];
+        }
+    }
+    else{
+        $parktype='';
+        $parkType= array("");
+    }
+    //Update member info
+    $req="UPDATE membre SET nom_membre= '$nom', prenom_membre='$prenom', bio_membre='$bio', datenaissance_membre='$datenaissance', adressemail_membre='$adressemail', sexe_membre='$sexe' WHERE id_membre='$id'";
+    $res=mysqli_query($lien,$req);
+
+    //Check if a preference is set for this user
+    $req2="SELECT * FROM preference WHERE id_membre='$id'";
+    $res2=mysqli_query($lien,$req2);
+    if(!$res){
+        echo "Erreur SQL: $req<br>".mysqli_error($lien);
+    }
+    else{
+        $nb=mysqli_num_rows($res2);
+        //If preference is not set
+        if($nb != 1){
+            //Insert info
+            $req3="INSERT INTO preference VALUES(NULL,'$discussion','$sexPref','$researchType','$parktype','$hobbies',0,0,0,0,0, '$id')";
+            $res3=mysqli_query($lien,$req3);
+
+            //Set session param
+            $_SESSION['nom_membre']=$nom;
+            $_SESSION['prenom_membre']=$prenom;
+            $_SESSION['adressemail_membre']=$adressemail;
+            $_SESSION['bio_membre']=$bio;
+            $_SESSION['datenaissance_membre']=$datenaissance;
+            if($sexe == 0){
+                $_SESSION['sexe_membre']= "Homme";
+            }
+            else{
+                $_SESSION['sexe_membre']= "Femme";
+            }
+            $_SESSION['discussion']=$discussion;
+            $_SESSION['sexPref']=$sexPref;
+            $_SESSION['researchType']=$researchType;
+            $_SESSION['parkType']=$parkType;
+            $_SESSION['hobbies']=$hobbies;
+            
+            //Close sql link
+            mysqli_close($lien);
+        }
+        //If preference is set
+        else{
+            //Update info
+            $req3="UPDATE preference SET discussion_preference='$discussion', preferencesexe_preference='$sexPref',typerecherche_preference='$researchType',typeparc_preference='$parktype',loisir_preference='$hobbies' WHERE id_membre='$id'";
+            $res3=mysqli_query($lien,$req3);
+
+            //Set session param
+            $_SESSION['nom_membre']=$nom;
+            $_SESSION['prenom_membre']=$prenom;
+            $_SESSION['adressemail_membre']=$adressemail;
+            $_SESSION['bio_membre']=$bio;
+            $_SESSION['datenaissance_membre']=$datenaissance;
+            if($sexe == 0){
+                $_SESSION['sexe_membre']= "Homme";
+            }
+            else{
+                $_SESSION['sexe_membre']= "Femme";
+            }
+
+            $_SESSION['discussion']=$discussion;
+            $_SESSION['sexPref']=$sexPref;
+            $_SESSION['researchType']=$researchType;
+            $_SESSION['parkType']=$parkType;
+            $_SESSION['hobbies']=$hobbies;
+            
+             //Close sql link
+            mysqli_close($lien);
+        }                   
+    }       
+}
+
+//Launch post action
+if ((isset($_POST['modifnom']) && isset($_POST['modifpnom']) && isset($_POST['modifbio']) && isset($_POST['adressemail']) && isset($_POST['datenaissance']) && isset($_POST['genre']))){
+    if(empty($_POST['parkType'])){
+        modifyProfile($id, $lien, $_POST['modifnom'], $_POST['modifpnom'],$_POST['modifbio'],$_POST['adressemail'],$_POST['datenaissance'],$_POST['genre'],$_POST['discussion'],$_POST['genrepref'],$_POST['researchType'],'',$_POST['hobbies']);
+    }
+    else{
+        modifyProfile($id, $lien, $_POST['modifnom'], $_POST['modifpnom'],$_POST['modifbio'],$_POST['adressemail'],$_POST['datenaissance'],$_POST['genre'],$_POST['discussion'],$_POST['genrepref'],$_POST['researchType'],$_POST['parkType'],$_POST['hobbies']);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +187,13 @@
                 <a href="#">Mon compte</a>
                 <input type="checkbox" id="btn-1">
                 <ul>
-                    <li><a href="../profil/profil.html">Profil</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Inscription</a></li>
+                    <?php if(isset($_SESSION['id_membre'])): ?>
+                        <li><a href="../profil/profil.php">Profil</a></li>
+                        <li><a href="../deconnexion/deconnexion.php">Déconnexion</a></li>
+                    <?php else: ?>
+                        <li><a href="../connexion/connexion.php">Connexion</a></li>
+                        <li><a href="../inscription/inscription.php">Inscription</a></li>
+                    <?php endif; ?>
                 </ul>
             </li>
             <li>
@@ -68,31 +228,31 @@
                 <label for="modifbanniere">Modifier ma bannière</label><input type="file" name="image2" id="modifbanniere">
             </div>
             <div id="modif_nom">
-                <label for="modifnom">Modifier mon nom</label><input type="text" name="modifnom" id="modifnom">
+                <label for="modifnom">Modifier mon nom</label><input type="text" value="<?php echo $_SESSION['nom_membre']?>" name="modifnom" id="modifnom">
             </div>
             <div id="modif_prenom">
-            <label for="modifpnom">Modifier mon prénom</label><input type="text" name="modifpnom" id="modifpnom">
+            <label for="modifpnom">Modifier mon prénom</label><input type="text" value="<?php echo $_SESSION['prenom_membre']?>" name="modifpnom" id="modifpnom">
             </div>
             <div id="modif_bio">
-                <label for="modifbio">Modifier ma bio</label><input type="text" name="modifbio" id="modifbio" maxlength="60">
+                <label for="modifbio">Modifier ma bio</label><input type="text" name="modifbio" value="<?php echo $_SESSION['bio_membre']?>" id="modifbio" maxlength="60">
             </div>
             <div id="titreInformations">
                 Mes informations
             </div>
             <div id="adressemail_modif">
-                <label for="adressemail">Adresse mail</label><input type="email" name="adressemail" id="adressemail">
+                <label for="adressemail">Adresse mail</label><input type="email" value="<?php echo $_SESSION['adressemail_membre']?>" name="adressemail" id="adressemail">
             </div>
             <div id="datenaissance_modif">
-                <label for="datenaissance">Date de naissance</label><input type="date" name="datenaissance" id="datenaissance">
+                <label for="datenaissance">Date de naissance</label><input type="date" value="<?php echo $_SESSION['datenaissance_membre']?>" name="datenaissance" id="datenaissance">
             </div>
             <div id="sexe_modif">
                 <h2 id="titre_sexe">Sexe</h2>
                 <div class="radiobutton">
-                    <input type="radio" id="choix1_sexe" name="genre" value="homme">
+                    <input type="radio" id="choix1_sexe" name="genre" value="homme" <?php echo ($_SESSION['sexe_membre']=='Homme')?'checked':'' ?>>
                     <label for="choix1">Homme</label>
                 </div>
                 <div class="radiobutton">
-                    <input type="radio" id="choix2_sexe" name="genre" value="femme">
+                    <input type="radio" id="choix2_sexe" name="genre" value="femme" <?php echo ($_SESSION['sexe_membre']=='Femme')?'checked':'' ?>>
                     <label for="choix2">Femme</label> 
                 </div>
             </div>
@@ -118,11 +278,11 @@
                     <i class="fab fa-discourse"></i>
                 </div>
                 <div id="discussion_modif">
-                    <input type="radio" id="choix1" name="discussion" value="discret">
+                    <input type="radio" id="choix1" name="discussion" value="discret" <?php echo ($_SESSION['discussion']=='discret')?'checked':'' ?>>
                     <label for="choix1">Discrète(e)</label>
-                    <input type="radio" id="choix2" name="discussion" value="alaise">
+                    <input type="radio" id="choix2" name="discussion" value="alaise" <?php echo ($_SESSION['discussion']=='alaise')?'checked':'' ?>>
                     <label for="choix2">Plutôt à l'aise</label>
-                    <input type="radio" id="choix3" name="discussion" value="parlebeaucoup">
+                    <input type="radio" id="choix3" name="discussion" value="parlebeaucoup" <?php echo ($_SESSION['discussion']=='parlebeaucoup')?'checked':'' ?>>
                     <label for="choix2">Parle beaucoup</label>
                 </div>
                 <div id="titre_preference">
@@ -132,11 +292,11 @@
                     <i class="fas fa-heart"></i>
                 </div>
                 <div id="preferences_modif">
-                    <input type="checkbox" id="genrepref1" name="genrepref1" value="Homme">
+                    <input type="radio" id="genrepref1" name="genrepref" value="Homme" <?php echo ($_SESSION['sexPref']=='Homme')?'checked':'' ?>>
                     <label for="vehicle1"> Homme</label>
-                    <input type="checkbox" id="genrepref2" name="genrepref2" value="Femme">
+                    <input type="radio" id="genrepref2" name="genrepref" value="Femme" <?php echo ($_SESSION['sexPref']=='Femme')?'checked':'' ?>>
                     <label for="vehicle2"> Femme</label>
-                    <input type="checkbox" id="genrepref3" name="genrepref3" value="LesDeux">
+                    <input type="radio" id="genrepref3" name="genrepref" value="LesDeux" <?php echo ($_SESSION['sexPref']=='LesDeux')?'checked':'' ?>>
                     <label for="vehicle3"> Les deux</label>
                 </div>
                 <div id="titre_typerecherche">
@@ -146,11 +306,11 @@
                     <i class="fas fa-search"></i>
                 </div>
                 <div id="recherche_modif">
-                    <input type="checkbox" id="type1" name="type1" value="samuser">
+                    <input type="checkbox" id="type1" name="researchType" value="samuser" <?php echo ($_SESSION['researchType']=='samuser')?'checked':'' ?>>
                     <label for="vehicle1">S'amuser</label>
-                    <input type="checkbox" id="type2" name="type2" value="amour">
+                    <input type="checkbox" id="type2" name="researchType" value="amour" <?php echo ($_SESSION['researchType']=='amour')?'checked':'' ?> >
                     <label for="vehicle2">Rencontre amoureuse</label>
-                    <input type="checkbox" id="type3" name="type3" value="amis">
+                    <input type="checkbox" id="type3" name="researchType" value="amis" <?php echo ($_SESSION['researchType']=='amis')?'checked':'' ?>>
                     <label for="vehicle3">Se faire des amis</label>
                 </div>
                 <div id="titre_typeparc">
@@ -160,17 +320,17 @@
                     <i class="fab fa-fort-awesome-alt"></i>
                 </div>
                 <div id="parc_modif">
-                <input type="checkbox" id="typeparc6" name="typeparc6" value="gsensation">
+                    <input type="checkbox" id="typeparc6" name="parkType[]" value="grosses" <?php echo (in_array('grosses', $_SESSION['parkType']))?'checked':'' ?>>
                     <label for="vehicle3">Grosse sensation</label> 
-                    <input type="checkbox" id="typeparc5" name="typeparc5" value="sensation">
+                    <input type="checkbox" id="typeparc5" name="parkType[]" value="sensation" <?php echo (in_array('sensation', $_SESSION['parkType']))?'checked':'' ?>>
                     <label for="vehicle3">Sensation</label> 
-                    <input type="checkbox" id="typeparc2" name="typeparc2" value="proche">
+                    <input type="checkbox" id="typeparc2" name="parkType[]" value="proche" <?php echo (in_array('proche', $_SESSION['parkType']))?'checked':'' ?>>
                     <label for="vehicle2">Proche</label>
-                    <input type="checkbox" id="typeparc3" name="typeparc3" value="aquatique">
+                    <input type="checkbox" id="typeparc3" name="parkType[]" value="aquatique" <?php echo (in_array('aquatique', $_SESSION['parkType']))?'checked':'' ?>>
                     <label for="vehicle3">Aquatique</label>
-                    <input type="checkbox" id="typeparc4" name="typeparc4" value="thematise">
+                    <input type="checkbox" id="typeparc4" name="parkType[]" value="thematise" <?php echo (in_array('thematise', $_SESSION['parkType']))?'checked':'' ?>>
                     <label for="vehicle3">Thématisé</label> 
-                    <input type="checkbox" id="typeparc1" name="typeparc1" value="familiale">
+                    <input type="checkbox" id="typeparc1" name="parkType[]" value="familiale" <?php echo (in_array('familiale', $_SESSION['parkType']))?'checked':'' ?>>
                     <label for="vehicle1">Familiale</label>
                 </div>
                 <div id="titre_loisir">
@@ -180,7 +340,7 @@
                     <i class="fas fa-running"></i>
                 </div>
                 <div id="texte_loisir">
-                    <textarea placeholder="Pêcher, faire du sport, écouter de la musique,voyager.."></textarea>
+                    <input type="textarea" name="hobbies" placeholder="Pêcher, faire du sport, écouter de la musique,voyager.." value="<?php echo $_SESSION['hobbies'] ?>"></input>
                 </div>
                 <div id="btn_enregistrer_modif">
                     <input type="submit" name="enregistrer_modif" value="Enregistrer">
